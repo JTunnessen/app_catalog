@@ -11,194 +11,160 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :acronym %><br>
+  <input type="text" class="form-control" placeholder='Application Name'
+    <%= f.text_field :title, autofocus: true %>
+  <br>
+  <input type="text" class="form-control" placeholder='Acronym eg: FIMS'
     <%= f.text_field :acronym %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
+  <br>
+  <textarea class="form-control" placeholder='App Description'
     <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :prod_mgr %><br>
+  <br>
+  <input type="text" class="form-control" placeholder='Product Manager'
     <%= f.text_field :prod_mgr %>
-  </div>
-  <div class="field">
-    <%= f.label :prod_owner %><br>
+  <br>
+  <input type="text" class="form-control" placeholder='Product Owner'
     <%= f.text_field :prod_owner %>
-  </div>
-  <div class="field">
-    <%= f.label :lead_dev %><br>
+  <br>
+  <input type="text" class="form-control" placeholder='Lead Developer'
     <%= f.text_field :lead_dev %>
-  </div>
-  <div class="field">
-    <%= f.label :deploy_date %><br>
-    <%= f.date_select :deploy_date %>
-  </div>
-  <div class="field">
-    <%= f.label :user_1 %><br>
-    <%= f.text_field :user_1 %>
-  </div>
-  <div class="field">
-    <%= f.label :user_count_1 %><br>
-    <%= f.text_field :user_count_1 %>
-  </div>
-  <div class="field">
-    <%= f.label :user_2 %><br>
-    <%= f.text_field :user_2 %>
-  </div>
-  <div class="field">
-    <%= f.label :user_count_2 %><br>
-    <%= f.text_field :user_count_2 %>
-  </div>
-  <div class="field">
-    <%= f.label :user_3 %><br>
-    <%= f.text_field :user_3 %>
-  </div>
-  <div class="field">
-    <%= f.label :user_count_3 %><br>
-    <%= f.text_field :user_count_3 %>
-  </div>
-  <div class="field">
-    <%= f.label :user_4 %><br>
-    <%= f.text_field :user_4 %>
-  </div>
-  <div class="field">
-    <%= f.label :user_count_4 %><br>
-    <%= f.text_field :user_count_4 %>
-  </div>
-  <div class="field">
-    <%= f.label :user_5 %><br>
-    <%= f.text_field :user_5 %>
-  </div>
-  <div class="field">
-    <%= f.label :user_count_5 %><br>
-    <%= f.text_field :user_count_5 %>
-  </div>
-  <div class="field">
-    <%= f.label :user_6 %><br>
-    <%= f.text_field :user_6 %>
-  </div>
-  <div class="field">
-    <%= f.label :user_count_6 %><br>
-    <%= f.text_field :user_count_6 %>
-  </div>
-  <div class="field">
-    <%= f.label :user_7 %><br>
-    <%= f.text_field :user_7 %>
-  </div>
-  <div class="field">
-    <%= f.label :user_count_7 %><br>
-    <%= f.text_field :user_count_7 %>
-  </div>
-  <div class="field">
-    <%= f.label :user_8 %><br>
-    <%= f.text_field :user_8 %>
-  </div>
-  <div class="field">
-    <%= f.label :user_count_8 %><br>
-    <%= f.text_field :user_count_8 %>
-  </div>
-  <div class="field">
-    <%= f.label :responsive %><br>
-    <%= f.check_box :responsive %>
-  </div>
-  <div class="field">
-    <%= f.label :version %><br>
+  <br>
+  <input type="text" class="form-control" placeholder='Version Number'
     <%= f.text_field :version %>
+  <br>
+  <div>
+    <span><strong>Deployment Date</strong></span>  <%= f.date_select :deploy_date %>
   </div>
-  <div class="field">
-    <%= f.label :pro_lang_1 %><br>
-    <%= f.text_field :pro_lang_1 %>
+  <br>
+  <div>
+    <span><strong>Mobile App</strong></span>  <%= f.check_box :responsive %>
   </div>
-  <div class="field">
-    <%= f.label :prog_lang_eol_1 %><br>
-    <%= f.date_select :prog_lang_eol_1 %>
+  <br>
+  <h3>Application Userbase</h3>
+  <input type="text" class="form-control" placeholder='User Group eg: OIEA'
+    <%= f.text_field :user_1 %>
+  <br>
+  <input type="text" class="form-control" placeholder='# of users eg: 3,500'
+    <%= f.text_field :user_count_1 %>
+  <br>
+  <input type="text" class="form-control" placeholder='User Group eg: OPHS'
+    <%= f.text_field :user_2 %>
+  <br>
+  <input type="text" class="form-control" placeholder='# of users eg: 3,500'
+    <%= f.text_field :user_count_2 %>
+  <br>
+  <input type="text" class="form-control" placeholder='User Group eg: OFO'
+    <%= f.text_field :user_3 %>
+  <br>
+  <input type="text" class="form-control" placeholder='# of users eg: 3,500'
+    <%= f.text_field :user_count_3 %>
+  <br>
+  <input type="text" class="form-control" placeholder='User Group eg: OCIO'
+    <%= f.text_field :user_4 %>
+  <br>
+  <input type="text" class="form-control" placeholder='# of users eg: 3,500'
+    <%= f.text_field :user_count_4 %>
+  <br>
+  <input type="text" class="form-control" placeholder='User Group eg: OM'
+    <%= f.text_field :user_5 %>
+  <br>
+  <input type="text" class="form-control" placeholder='# of users eg: 3,500'
+    <%= f.text_field :user_count_5 %>
+  <br>
+  <input type="text" class="form-control" placeholder='User Group eg: OA'
+    <%= f.text_field :user_6 %>
+  <br>
+  <input type="text" class="form-control" placeholder='# of users eg: 3,500'
+    <%= f.text_field :user_count_6 %>
+  <br>
+  <input type="text" class="form-control" placeholder='User Group eg: ODIFP'
+    <%= f.text_field :user_7 %>
+  <br>
+  <input type="text" class="form-control" placeholder='# of users eg: 3,500'
+    <%= f.text_field :user_count_7 %>
+  <br>
+  <input type="text" class="form-control" placeholder='User Group eg: OPPD'
+    <%= f.text_field :user_8 %>
+  <br>
+  <input type="text" class="form-control" placeholder='# of users eg: 3,500'
+    <%= f.text_field :user_count_8 %>
+  <br>
+  <h3>Technology Stack</h3>
+  <input type="text" class="form-control" placeholder='Programming Language'
+    <%= f.text_field :prog_lang_1 %>
+  <br>
+  <div>
+    <span><strong>End of Life Date</strong></span>  <%= f.date_select :prog_lang_eol_1 %>
   </div>
-  <div class="field">
-    <%= f.label :framework_1 %><br>
+  <br>
+  <input type="text" class="form-control" placeholder='Framework'
     <%= f.text_field :framework_1 %>
+  <br>
+  <div>
+    <span><strong>End of Life Date</strong></span>  <%= f.date_select :framework_eol_1 %>
   </div>
-  <div class="field">
-    <%= f.label :framework_eol_1 %><br>
-    <%= f.date_select :framework_eol_1 %>
-  </div>
-  <div class="field">
-    <%= f.label :tech_stack_1 %><br>
+  <br>
+  <input type="text" class="form-control" placeholder='Technology'
     <%= f.text_field :tech_stack_1 %>
+  <br>
+  <div>
+    <span><strong>End of Life Date</strong></span>  <%= f.date_select :tech_stack_eol_1 %>
   </div>
-  <div class="field">
-    <%= f.label :tech_stack_eol_1 %><br>
-    <%= f.date_select :tech_stack_eol_1 %>
-  </div>
-  <div class="field">
-    <%= f.label :tech_stack_2 %><br>
+  <br>
+  <input type="text" class="form-control" placeholder='Technology'
     <%= f.text_field :tech_stack_2 %>
+  <br>
+  <div>
+    <span><strong>End of Life Date</strong></span>  <%= f.date_select :tech_stack_eol_2 %>
   </div>
-  <div class="field">
-    <%= f.label :tech_stack_eol_2 %><br>
-    <%= f.date_select :tech_stack_eol_2 %>
-  </div>
-  <div class="field">
-    <%= f.label :tech_stack_3 %><br>
+  <br>
+  <input type="text" class="form-control" placeholder='Technology'
     <%= f.text_field :tech_stack_3 %>
+  <br>
+  <div>
+    <span><strong>End of Life Date</strong></span>  <%= f.date_select :tech_stack_eol_3 %>
   </div>
-  <div class="field">
-    <%= f.label :tech_stack_eol_3 %><br>
-    <%= f.date_select :tech_stack_eol_3 %>
-  </div>
-  <div class="field">
-    <%= f.label :tech_stack_4 %><br>
+  <br>
+  <input type="text" class="form-control" placeholder='Technology'
     <%= f.text_field :tech_stack_4 %>
+  <div>
+      <br>
+    <span><strong>End of Life Date</strong></span>  <%= f.date_select :tech_stack_eol_4 %>
   </div>
-  <div class="field">
-    <%= f.label :tech_stack_eol_4 %><br>
-    <%= f.date_select :tech_stack_eol_4 %>
-  </div>
-  <div class="field">
-    <%= f.label :tech_stack_5 %><br>
+  <br>
+  <input type="text" class="form-control" placeholder='Technology'
     <%= f.text_field :tech_stack_5 %>
+    <br>
+  <div>
+    <span><strong>End of Life Date</strong></span>  <%= f.date_select :tech_stack_eol_5 %>
   </div>
-  <div class="field">
-    <%= f.label :tech_stack_eol_5 %><br>
-    <%= f.date_select :tech_stack_eol_5 %>
-  </div>
-  <div class="field">
-    <%= f.label :tech_stack_6 %><br>
+  <br>
+  <input type="text" class="form-control" placeholder='Technology'
     <%= f.text_field :tech_stack_6 %>
+  <br>
+  <div>
+    <span><strong>End of Life Date</strong></span>  <%= f.date_select :tech_stack_eol_6 %>
   </div>
-  <div class="field">
-    <%= f.label :tech_stack_eol_6 %><br>
-    <%= f.date_select :tech_stack_eol_6 %>
-  </div>
-  <div class="field">
-    <%= f.label :sys_dep_1 %><br>
+  <br>
+  <h3>Application Interfaces</h3>
+  <input type="text" class="form-control" placeholder='System Intefaces/Dependencies'
     <%= f.text_field :sys_dep_1 %>
-  </div>
-  <div class="field">
-    <%= f.label :sys_dep_2 %><br>
+  <br>
+  <input type="text" class="form-control" placeholder='System Intefaces/Dependencies'
     <%= f.text_field :sys_dep_2 %>
-  </div>
-  <div class="field">
-    <%= f.label :sys_dep_3 %><br>
+  <br>
+  <input type="text" class="form-control" placeholder='System Intefaces/Dependencies'
     <%= f.text_field :sys_dep_3 %>
-  </div>
-  <div class="field">
-    <%= f.label :sys_dep_4 %><br>
+  <br>
+  <input type="text" class="form-control" placeholder='System Intefaces/Dependencies'
     <%= f.text_field :sys_dep_4 %>
-  </div>
-  <div class="field">
-    <%= f.label :sys_dep_5 %><br>
+  <br>
+  <input type="text" class="form-control" placeholder='System Intefaces/Dependencies'
     <%= f.text_field :sys_dep_5 %>
-  </div>
-  <div class="field">
-    <%= f.label :sys_dep_6 %><br>
+  <br>
+  <input type="text" class="form-control" placeholder='System Intefaces/Dependencies'
     <%= f.text_field :sys_dep_6 %>
-  </div>
+  <br>
   <div class="field">
     <%= f.label :user_id %><br>
     <%= f.number_field :user_id %>

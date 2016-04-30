@@ -26,7 +26,7 @@ one:
   user_count_8: MyString
   responsive: false
   version: MyString
-  pro_lang_1: MyString
+  prog_lang_1: MyString
   prog_lang_eol_1: 2016-04-30
   framework_1: MyString
   framework_eol_1: 2016-04-30

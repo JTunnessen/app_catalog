@@ -26,7 +26,7 @@ class CreateApps < ActiveRecord::Migration
       t.string :user_count_8
       t.boolean :responsive
       t.string :version
-      t.string :pro_lang_1
+      t.string :prog_lang_1
       t.date :prog_lang_eol_1
       t.string :framework_1
       t.date :framework_eol_1
