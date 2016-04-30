@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>App Catalog</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+    <div class="container">
+    <nav class="navbar navbar-inverse">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/welcome/index">App Catalog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">Link</a></li>
+            <li class="text-danger"><% if user_signed_in? %>
+        			<%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+        			<% else %>
+        			<%= link_to 'Login', root_path %>
+        			<% end %></li>
+          </ul>
+          <form class="navbar-form navbar-right" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search (eg. PHIS)">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+        </div><!-- /.navbar-collapse -->
+    </nav>
+
+    <%= yield %>
+  </div>
+
+</body>
+<footer>
+  <div class="row">
+	   <div class="col-lg-6">
+       <br>
+      <p>&copy; 2016 4Tun Gaming</p><br>
+     </div>
+ </div>
+</footer>
+</html>

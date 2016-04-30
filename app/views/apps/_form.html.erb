@@ -1,0 +1,209 @@
+<%= form_for(@app) do |f| %>
+  <% if @app.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@app.errors.count, "error") %> prohibited this app from being saved:</h2>
+
+      <ul>
+      <% @app.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :acronym %><br>
+    <%= f.text_field :acronym %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :prod_mgr %><br>
+    <%= f.text_field :prod_mgr %>
+  </div>
+  <div class="field">
+    <%= f.label :prod_owner %><br>
+    <%= f.text_field :prod_owner %>
+  </div>
+  <div class="field">
+    <%= f.label :lead_dev %><br>
+    <%= f.text_field :lead_dev %>
+  </div>
+  <div class="field">
+    <%= f.label :deploy_date %><br>
+    <%= f.date_select :deploy_date %>
+  </div>
+  <div class="field">
+    <%= f.label :user_1 %><br>
+    <%= f.text_field :user_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :user_count_1 %><br>
+    <%= f.text_field :user_count_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :user_2 %><br>
+    <%= f.text_field :user_2 %>
+  </div>
+  <div class="field">
+    <%= f.label :user_count_2 %><br>
+    <%= f.text_field :user_count_2 %>
+  </div>
+  <div class="field">
+    <%= f.label :user_3 %><br>
+    <%= f.text_field :user_3 %>
+  </div>
+  <div class="field">
+    <%= f.label :user_count_3 %><br>
+    <%= f.text_field :user_count_3 %>
+  </div>
+  <div class="field">
+    <%= f.label :user_4 %><br>
+    <%= f.text_field :user_4 %>
+  </div>
+  <div class="field">
+    <%= f.label :user_count_4 %><br>
+    <%= f.text_field :user_count_4 %>
+  </div>
+  <div class="field">
+    <%= f.label :user_5 %><br>
+    <%= f.text_field :user_5 %>
+  </div>
+  <div class="field">
+    <%= f.label :user_count_5 %><br>
+    <%= f.text_field :user_count_5 %>
+  </div>
+  <div class="field">
+    <%= f.label :user_6 %><br>
+    <%= f.text_field :user_6 %>
+  </div>
+  <div class="field">
+    <%= f.label :user_count_6 %><br>
+    <%= f.text_field :user_count_6 %>
+  </div>
+  <div class="field">
+    <%= f.label :user_7 %><br>
+    <%= f.text_field :user_7 %>
+  </div>
+  <div class="field">
+    <%= f.label :user_count_7 %><br>
+    <%= f.text_field :user_count_7 %>
+  </div>
+  <div class="field">
+    <%= f.label :user_8 %><br>
+    <%= f.text_field :user_8 %>
+  </div>
+  <div class="field">
+    <%= f.label :user_count_8 %><br>
+    <%= f.text_field :user_count_8 %>
+  </div>
+  <div class="field">
+    <%= f.label :responsive %><br>
+    <%= f.check_box :responsive %>
+  </div>
+  <div class="field">
+    <%= f.label :version %><br>
+    <%= f.text_field :version %>
+  </div>
+  <div class="field">
+    <%= f.label :pro_lang_1 %><br>
+    <%= f.text_field :pro_lang_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :prog_lang_eol_1 %><br>
+    <%= f.date_select :prog_lang_eol_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :framework_1 %><br>
+    <%= f.text_field :framework_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :framework_eol_1 %><br>
+    <%= f.date_select :framework_eol_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :tech_stack_1 %><br>
+    <%= f.text_field :tech_stack_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :tech_stack_eol_1 %><br>
+    <%= f.date_select :tech_stack_eol_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :tech_stack_2 %><br>
+    <%= f.text_field :tech_stack_2 %>
+  </div>
+  <div class="field">
+    <%= f.label :tech_stack_eol_2 %><br>
+    <%= f.date_select :tech_stack_eol_2 %>
+  </div>
+  <div class="field">
+    <%= f.label :tech_stack_3 %><br>
+    <%= f.text_field :tech_stack_3 %>
+  </div>
+  <div class="field">
+    <%= f.label :tech_stack_eol_3 %><br>
+    <%= f.date_select :tech_stack_eol_3 %>
+  </div>
+  <div class="field">
+    <%= f.label :tech_stack_4 %><br>
+    <%= f.text_field :tech_stack_4 %>
+  </div>
+  <div class="field">
+    <%= f.label :tech_stack_eol_4 %><br>
+    <%= f.date_select :tech_stack_eol_4 %>
+  </div>
+  <div class="field">
+    <%= f.label :tech_stack_5 %><br>
+    <%= f.text_field :tech_stack_5 %>
+  </div>
+  <div class="field">
+    <%= f.label :tech_stack_eol_5 %><br>
+    <%= f.date_select :tech_stack_eol_5 %>
+  </div>
+  <div class="field">
+    <%= f.label :tech_stack_6 %><br>
+    <%= f.text_field :tech_stack_6 %>
+  </div>
+  <div class="field">
+    <%= f.label :tech_stack_eol_6 %><br>
+    <%= f.date_select :tech_stack_eol_6 %>
+  </div>
+  <div class="field">
+    <%= f.label :sys_dep_1 %><br>
+    <%= f.text_field :sys_dep_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :sys_dep_2 %><br>
+    <%= f.text_field :sys_dep_2 %>
+  </div>
+  <div class="field">
+    <%= f.label :sys_dep_3 %><br>
+    <%= f.text_field :sys_dep_3 %>
+  </div>
+  <div class="field">
+    <%= f.label :sys_dep_4 %><br>
+    <%= f.text_field :sys_dep_4 %>
+  </div>
+  <div class="field">
+    <%= f.label :sys_dep_5 %><br>
+    <%= f.text_field :sys_dep_5 %>
+  </div>
+  <div class="field">
+    <%= f.label :sys_dep_6 %><br>
+    <%= f.text_field :sys_dep_6 %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
