@@ -20,11 +20,11 @@
   <textarea class="form-control" placeholder='App Description'
     <%= f.text_area :description %>
   <br>
-  <input type="text" class="form-control" placeholder='Product Manager'
-    <%= f.text_field :prod_mgr %>
-  <br>
   <input type="text" class="form-control" placeholder='Product Owner'
     <%= f.text_field :prod_owner %>
+  <br>
+  <input type="text" class="form-control" placeholder='Product Manager'
+    <%= f.text_field :prod_mgr %>
   <br>
   <input type="text" class="form-control" placeholder='Lead Developer'
     <%= f.text_field :lead_dev %>
@@ -93,58 +93,50 @@
   <input type="text" class="form-control" placeholder='Programming Language and Version eg: Python 3.5.1'
     <%= f.text_field :prog_lang_1 %>
   <br>
-  <div>
-    <span><strong>End of Life Date</strong></span>  <%= f.date_select :prog_lang_eol_1 %>
-  </div>
+  <input type="text" class="form-control" placeholder='EOL Date eg. 04-01-2015'
+    <%= f.text_field :prog_lang_eol_1 %>
   <br>
   <input type="text" class="form-control" placeholder='Framework'
     <%= f.text_field :framework_1 %>
   <br>
-  <div>
-    <span><strong>End of Life Date</strong></span>  <%= f.date_select :framework_eol_1 %>
-  </div>
+  <input type="text" class="form-control" placeholder='EOL Date eg. 04-01-2015'
+    <%= f.text_field :framework_eol_1 %>
   <br>
   <input type="text" class="form-control" placeholder='Technology'
     <%= f.text_field :tech_stack_1 %>
   <br>
-  <div>
-    <span><strong>End of Life Date</strong></span>  <%= f.date_select :tech_stack_eol_1 %>
-  </div>
+  <input type="text" class="form-control" placeholder='EOL Date eg. 04-01-2015'
+    <%= f.text_field :tech_stack_eol_1 %>
   <br>
   <input type="text" class="form-control" placeholder='Technology'
     <%= f.text_field :tech_stack_2 %>
   <br>
-  <div>
-    <span><strong>End of Life Date</strong></span>  <%= f.date_select :tech_stack_eol_2 %>
-  </div>
+  <input type="text" class="form-control" placeholder='EOL Date eg. 04-01-2015'
+    <%= f.text_field :tech_stack_eol_2 %>
   <br>
   <input type="text" class="form-control" placeholder='Technology'
     <%= f.text_field :tech_stack_3 %>
   <br>
-  <div>
-    <span><strong>End of Life Date</strong></span>  <%= f.date_select :tech_stack_eol_3 %>
-  </div>
+  <input type="text" class="form-control" placeholder='EOL Date eg. 04-01-2015'
+    <%= f.text_field :tech_stack_eol_3 %>
   <br>
   <input type="text" class="form-control" placeholder='Technology'
     <%= f.text_field :tech_stack_4 %>
-  <div>
-      <br>
-    <span><strong>End of Life Date</strong></span>  <%= f.date_select :tech_stack_eol_4 %>
-  </div>
+  <br>
+  <input type="text" class="form-control" placeholder='EOL Date eg. 04-01-2015'
+    <%= f.text_field :tech_stack_eol_4 %>
   <br>
   <input type="text" class="form-control" placeholder='Technology'
     <%= f.text_field :tech_stack_5 %>
     <br>
-  <div>
-    <span><strong>End of Life Date</strong></span>  <%= f.date_select :tech_stack_eol_5 %>
-  </div>
+  <input type="text" class="form-control" placeholder='EOL Date eg. 04-01-2015'
+    <%= f.text_field :tech_stack_eol_5 %>
   <br>
   <input type="text" class="form-control" placeholder='Technology'
     <%= f.text_field :tech_stack_6 %>
   <br>
-  <div>
-    <span><strong>End of Life Date</strong></span>  <%= f.date_select :tech_stack_eol_6 %>
-  </div>
+  <input type="text" class="form-control" placeholder='EOL Date eg. 04-01-2015'
+    <%= f.text_field :tech_stack_eol_6 %>
   <br>
   <h3>Application Interfaces</h3>
   <input type="text" class="form-control" placeholder='System Intefaces/Dependencies'
@@ -166,8 +158,8 @@
     <%= f.text_field :sys_dep_6 %>
   <br>
   <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
+    <%= f.label :app_priority %><br>
+    <%= f.number_field :app_priority %>
   </div>
   <div class="actions">
     <%= f.submit %>

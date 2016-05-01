@@ -1,25 +1,27 @@
 <p id="notice"><%= notice %></p>
-
+<%= link_to 'Edit', edit_app_path(@app) %> |
+<%= link_to 'Back', apps_path %>
 <p id="app-title">
   <h1><%= @app.title %></h1>
   <h2>(<%= @app.acronym %>)</h2>
 </p>
-
 <p>
-  <strong>Description:</strong>
+  <strong>Organizational Priority:</strong>
+  <%= @app.app_priority %>
 </p>
+
 <p>
   <%= @app.description %>
 </p>
 
 <p>
-  <strong>Product Manager:</strong>
-  <%= @app.prod_mgr %>
+  <strong>Product Owner:</strong>
+  <%= @app.prod_owner %>
 </p>
 
 <p>
-  <strong>Product Owner:</strong>
-  <%= @app.prod_owner %>
+  <strong>Product Manager:</strong>
+  <%= @app.prod_mgr %>
 </p>
 
 <p>
@@ -39,8 +41,13 @@
   <strong>Version:</strong>
   <%= @app.version %>
 </p>
-
-<h3>User Base</h3>
+<!-- User base calculation -->
+<h3>User Base (<%= @app.user_count_1.delete(',').to_i +
+      @app.user_count_2.delete(',').to_i +
+      @app.user_count_3.delete(',').to_i +
+      @app.user_count_4.delete(',').to_i +
+      @app.user_count_5.delete(',').to_i +
+      @app.user_count_6.delete(',').to_i %>)</h3>
 <p>
   <strong><%= @app.user_1 %> <%= @app.user_count_1 %></strong>
 </p>
@@ -67,39 +74,47 @@
 </p>
 
 <h3>Technology Stack</h3>
-<p>
+<p><% if @app.prog_lang_1.present? %>
   <strong>Programming Language:</strong>
   <%= @app.prog_lang_1 %>  <strong>EOL:</strong> <%= @app.prog_lang_eol_1 %>
+  <% end %>
 </p>
 
-<p>
+<p><% if @app.framework_1.present? %>
   <strong>Framework:</strong>
   <%= @app.framework_1 %> <strong>EOL:</strong> <%= @app.framework_eol_1 %>
+  <% end %>
 </p>
 
-<p>
+<p><% if @app.tech_stack_1.present? %>
   <strong>Technology:</strong>
   <%= @app.tech_stack_1 %> <strong>EOL:</strong> <%= @app.tech_stack_eol_1 %>
+  <% end %>
 </p>
-<p>
+<p><% if @app.tech_stack_2.present? %>
   <strong>Technology:</strong>
   <%= @app.tech_stack_2 %> <strong>EOL:</strong> <%= @app.tech_stack_eol_2 %>
+  <% end %>
 </p>
-<p>
+<p><% if @app.tech_stack_3.present? %>
   <strong>Technology:</strong>
   <%= @app.tech_stack_3 %> <strong>EOL:</strong> <%= @app.tech_stack_eol_3 %>
+  <% end %>
 </p>
-<p>
+<p><% if @app.tech_stack_4.present? %>
   <strong>Technology:</strong>
   <%= @app.tech_stack_4 %> <strong>EOL:</strong> <%= @app.tech_stack_eol_4 %>
+  <% end %>
 </p>
-<p>
+<p><% if @app.tech_stack_5.present? %>
   <strong>Technology:</strong>
   <%= @app.tech_stack_5 %> <strong>EOL:</strong> <%= @app.tech_stack_eol_5 %>
+  <% end %>
 </p>
-<p>
+<p><% if @app.tech_stack_6.present? %>
   <strong>Technology:</strong>
   <%= @app.tech_stack_6 %> <strong>EOL:</strong> <%= @app.tech_stack_eol_6 %>
+  <% end %>
 </p>
 
 <h3>System Interfaces</h3>
@@ -126,11 +141,3 @@
 <p>
   <%= @app.sys_dep_6 %>
 </p>
-
-<p>
-  <strong>User:</strong>
-  <%= @app.user_id %>
-</p>
-
-<%= link_to 'Edit', edit_app_path(@app) %> |
-<%= link_to 'Back', apps_path %>
