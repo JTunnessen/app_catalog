@@ -1,15 +1,13 @@
-<h2>Log in</h2>
+<h2>Employee Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+  <input type="text" class="form-control" placeholder='Email'
+    <%= f.email_field :email, autofocus: true, autocomplete: "on" %>
+  <br>
 
-  <div class="field">
-    <%= f.label :password %><br />
+  <input type="text" class="form-control" placeholder='Password'
     <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+  <br>
 
   <% if devise_mapping.rememberable? -%>
     <div class="field">

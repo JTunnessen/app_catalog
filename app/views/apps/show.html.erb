@@ -43,11 +43,11 @@
 </p>
 <!-- User base calculation -->
 <h3>User Base (<%= @app.user_count_1.delete(',').to_i +
-      @app.user_count_2.delete(',').to_i +
-      @app.user_count_3.delete(',').to_i +
-      @app.user_count_4.delete(',').to_i +
-      @app.user_count_5.delete(',').to_i +
-      @app.user_count_6.delete(',').to_i %>)</h3>
+                    @app.user_count_2.delete(',').to_i +
+                    @app.user_count_3.delete(',').to_i +
+                    @app.user_count_4.delete(',').to_i +
+                    @app.user_count_5.delete(',').to_i +
+                    @app.user_count_6.delete(',').to_i %>)</h3>
 <p>
   <strong><%= @app.user_1 %> <%= @app.user_count_1 %></strong>
 </p>
@@ -121,23 +121,18 @@
 <p>
   <%= @app.sys_dep_1 %>
 </p>
-
 <p>
   <%= @app.sys_dep_2 %>
 </p>
-
 <p>
   <%= @app.sys_dep_3 %>
 </p>
-
 <p>
   <%= @app.sys_dep_4 %>
 </p>
-
 <p>
   <%= @app.sys_dep_5 %>
 </p>
-
 <p>
   <%= @app.sys_dep_6 %>
 </p>

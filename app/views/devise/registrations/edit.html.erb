@@ -3,29 +3,27 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
+  <input type="text" class="form-control" placeholder='Email'
     <%= f.email_field :email, autofocus: true %>
-  </div>
+  <br>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+  <small><i>(leave blank if you don't want to change it)</i></small>
+  <input type="text" class="form-control" placeholder='Password'
     <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+  <br>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
+  <input type="text" class="form-control" placeholder='Password Confirmation'
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+  <br>
 
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+  <small><i>(we need your current password to confirm your changes)</i></small>
+  <input type="text" class="form-control" placeholder='Current Password'
     <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
+  <br>
 
   <div class="actions">
     <%= f.submit "Update" %>
