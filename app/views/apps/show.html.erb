@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 <%= link_to 'Edit', edit_app_path(@app) %> |
 <%= link_to 'Back', apps_path %>
+
 <p id="app-title">
   <h1><%= @app.title %></h1>
   <h2>(<%= @app.acronym %>)</h2>
@@ -9,7 +10,6 @@
   <strong>Organizational Priority:</strong>
   <%= @app.app_priority %>
 </p>
-
 <p>
   <%= @app.description %>
 </p>
@@ -42,12 +42,7 @@
   <%= @app.version %>
 </p>
 <!-- User base calculation -->
-<h3>User Base (<%= @app.user_count_1.delete(',').to_i +
-                    @app.user_count_2.delete(',').to_i +
-                    @app.user_count_3.delete(',').to_i +
-                    @app.user_count_4.delete(',').to_i +
-                    @app.user_count_5.delete(',').to_i +
-                    @app.user_count_6.delete(',').to_i %>)</h3>
+<h3>User Base (<%= userBase %>)</h3>
 <p>
   <strong><%= @app.user_1 %> <%= @app.user_count_1 %></strong>
 </p>
