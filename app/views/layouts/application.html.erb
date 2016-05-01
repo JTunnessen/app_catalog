@@ -34,9 +34,11 @@
           </ul>
           <form class="navbar-form navbar-right" role="search">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search (eg. PHIS)">
+              <%= search_form_for @q do |f| %>
+              <input type="text" class="form-control" placeholder="Search (eg. PHIS)" <%= f.search_field :title_or_acronym_cont %>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <%= f.button "Search", :class => "btn btn-large btn-primary" %>
+              <% end %>
           </form>
         </div><!-- /.navbar-collapse -->
     </nav>

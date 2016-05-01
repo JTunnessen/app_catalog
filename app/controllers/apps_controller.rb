@@ -5,13 +5,15 @@ class AppsController < ApplicationController
   # GET /apps
   # GET /apps.json
   def index
-    @apps = App.order("apps.app_priority ASC").all
+    @q = App.ransack(params[:q])
+    @apps = @q.result.order("apps.app_priority ASC")
+    #@apps = App.order("apps.app_priority ASC").all
   end
 
   # GET /apps/1
   # GET /apps/1.json
   def show
-    
+
   end
 
   # GET /apps/new
