@@ -1,7 +1,7 @@
 class AppsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
   before_action :set_app, only: [:show, :edit, :update, :destroy]
-
+  require 'date'
   # GET /apps
   # GET /apps.json
   def index

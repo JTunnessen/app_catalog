@@ -78,26 +78,28 @@
       <div class="col-lg-6">
 
       <h3>Technology Stack</h3>
-      <p><% if @app.prog_lang_1.present? %>
-        <strong>Programming Language:</strong>
-        <%= @app.prog_lang_1 %>  <strong>EOL:</strong> <%= @app.prog_lang_eol_1 %>
+      <p> <% if @app.prog_lang_1.present? %>
+        <strong>Technology:</strong>
+        <%= @app.prog_lang_1 %> <strong>EOL:</strong> <%= @app.prog_lang_eol_1 %>
         <% end %>
       </p>
 
-      <p><% if @app.framework_1.present? %>
-        <strong>Framework:</strong>
+      <p> <% if @app.framework_1.present? %>
+        <strong>Technology:</strong>
         <%= @app.framework_1 %> <strong>EOL:</strong> <%= @app.framework_eol_1 %>
         <% end %>
       </p>
 
-      <p><% if @app.tech_stack_1.present? %>
+      <p> <% if @app.tech_stack_1.present? %>
         <strong>Technology:</strong>
         <%= @app.tech_stack_1 %> <strong>EOL:</strong> <%= @app.tech_stack_eol_1 %>
         <% end %>
       </p>
       <p><% if @app.tech_stack_2.present? %>
+
         <strong>Technology:</strong>
         <%= @app.tech_stack_2 %> <strong>EOL:</strong> <%= @app.tech_stack_eol_2 %>
+
         <% end %>
       </p>
       <p><% if @app.tech_stack_3.present? %>
