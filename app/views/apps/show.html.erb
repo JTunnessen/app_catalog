@@ -1,24 +1,34 @@
-<p id="notice"><%= notice %></p>
 <%= link_to 'Edit', edit_app_path(@app) %> |
 <%= link_to 'Back', apps_path %>
 <div class="panel panel-primary">
   <div class="panel-heading">
       <h1><%= @app.title %>  (<%= @app.acronym %>)</h1>
+      <p>
+        <strong>Organizational Priority:</strong>
+        <%= @app.app_priority %>
+      </p>
   </div><!-- panel heading -->
   <div class="panel-body">
     <div class="row">
       <div class="col-lg-8">
-        <p>
-          <strong>Organizational Priority:</strong>
-          <%= @app.app_priority %>
-        </p>
+        <div class="panel panel-info">
+          <div class="panel-heading">
+              <h3 class="panel-title">Description</h3>
+          </div>
+          <div class="panel-body">
           <p>
           <%= @app.description %>
         </p>
+      </div>
+    </div>
       </div><!-- column-lg -->
       <div class="col-lg-4">
         <!-- User base calculation -->
-        <h3>User Base (<%= userBase %>)</h3>
+        <div class="panel panel-info">
+          <div class="panel-heading">
+              <h3 class="panel-title">User Base (<%= userBase %>)</h3>
+          </div>
+          <div class="panel-body">
         <p>
           <strong><%= @app.user_1 %> <%= @app.user_count_1 %></strong>
         </p>
@@ -43,8 +53,13 @@
         <p>
           <strong><%= @app.user_8 %> <%= @app.user_count_8 %></strong>
         </p>
-
-        <h3>General Info</h3>
+      </div>
+    </div>
+        <div class="panel panel-info">
+          <div class="panel-heading">
+              <h3 class="panel-title">General Info</h3>
+          </div>
+          <div class="panel-body">
         <p>
           <strong>Product Owner:</strong>
           <%= @app.prod_owner %>
@@ -70,62 +85,187 @@
           <strong>Version:</strong>
           <%= @app.version %>
         </p>
+      </div>
+      </div><!-- panel -->
       </div><!-- column-lg-4 -->
     </div><!-- row -->
   </div><!-- panel body -->
   <div class="panel-body">
     <div class="row">
       <div class="col-lg-6">
-
-      <h3>Technology Stack</h3>
+        <div class="panel panel-info">
+          <div class="panel-heading">
+              <h3 class="panel-title">Technology Stack</h3>
+          </div>
+          <div class="panel-body">
       <p> <% if @app.prog_lang_1.present? %>
+        <% if ((@app.prog_lang_eol_1 - Date.today)<365) %>
+        <div class="alert alert-danger">
+        <strong>Technology:</strong>
+        <%= @app.prog_lang_1 %> <strong>EOL:</strong> <%= @app.prog_lang_eol_1 %> <i>...less than 1 year</i>
+        </div>
+        <% elsif (365 < (@app.prog_lang_eol_1 - Date.today)) && ((@app.prog_lang_eol_1 - Date.today) < 730) %>
+        <div class="alert alert-warning">
+        <strong>Technology:</strong>
+        <%= @app.prog_lang_1 %> <strong>EOL:</strong> <%= @app.prog_lang_eol_1 %> <i>...less than 2 years</i>
+        </div>
+        <% else %>
+        <div class="alert alert-success">
         <strong>Technology:</strong>
         <%= @app.prog_lang_1 %> <strong>EOL:</strong> <%= @app.prog_lang_eol_1 %>
+        </div>
+        <% end %>
         <% end %>
       </p>
 
       <p> <% if @app.framework_1.present? %>
+        <% if ((@app.framework_eol_1 - Date.today)<365) %>
+        <div class="alert alert-danger">
+        <strong>Technology:</strong>
+        <%= @app.framework_1 %> <strong>EOL:</strong> <%= @app.framework_eol_1 %> <i>...less than 1 year</i>
+        </div>
+        <% elsif (365 < (@app.prog_lang_eol_1 - Date.today)) && ((@app.framework_eol_1 - Date.today) < 730) %>
+        <div class="alert alert-warning">
+        <strong>Technology:</strong>
+        <%= @app.framework_1 %> <strong>EOL:</strong> <%= @app.framework_eol_1 %> <i>...less than 2 years</i>
+        </div>
+        <% else %>
+        <div class="alert alert-success">
         <strong>Technology:</strong>
         <%= @app.framework_1 %> <strong>EOL:</strong> <%= @app.framework_eol_1 %>
+        </div>
+        <% end %>
         <% end %>
       </p>
 
       <p> <% if @app.tech_stack_1.present? %>
+        <% if ((@app.tech_stack_eol_1 - Date.today)<365) %>
+        <div class="alert alert-danger">
+        <strong>Technology:</strong>
+        <%= @app.tech_stack_1 %> <strong>EOL:</strong> <%= @app.tech_stack_eol_1 %> <i>...less than 1 year</i>
+        </div>
+        <% elsif (365 < (@app.tech_stack_eol_1 - Date.today)) && ((@app.tech_stack_eol_1 - Date.today) < 730) %>
+        <div class="alert alert-warning">
+        <strong>Technology:</strong>
+        <%= @app.tech_stack_1 %> <strong>EOL:</strong> <%= @app.tech_stack_eol_1 %> <i>...less than 2 years</i>
+        </div>
+        <% else %>
+        <div class="alert alert-success">
         <strong>Technology:</strong>
         <%= @app.tech_stack_1 %> <strong>EOL:</strong> <%= @app.tech_stack_eol_1 %>
+        </div>
+        <% end %>
         <% end %>
       </p>
-      <p><% if @app.tech_stack_2.present? %>
 
+      <p> <% if @app.tech_stack_2.present? %>
+        <% if ((@app.tech_stack_eol_2 - Date.today)<365) %>
+        <div class="alert alert-danger">
+        <strong>Technology:</strong>
+        <%= @app.tech_stack_2 %> <strong>EOL:</strong> <%= @app.tech_stack_eol_2 %> <i>...less than 1 year</i>
+        </div>
+        <% elsif (365 < (@app.tech_stack_eol_2 - Date.today)) && ((@app.tech_stack_eol_2 - Date.today) < 730) %>
+        <div class="alert alert-warning">
+        <strong>Technology:</strong>
+        <%= @app.tech_stack_2 %> <strong>EOL:</strong> <%= @app.tech_stack_eol_2 %> <i>...less than 2 years</i>
+        </div>
+        <% else %>
+        <div class="alert alert-success">
         <strong>Technology:</strong>
         <%= @app.tech_stack_2 %> <strong>EOL:</strong> <%= @app.tech_stack_eol_2 %>
-
+        </div>
+        <% end %>
         <% end %>
       </p>
-      <p><% if @app.tech_stack_3.present? %>
+
+      <p> <% if @app.tech_stack_3.present? %>
+        <% if ((@app.tech_stack_eol_3 - Date.today)<365) %>
+        <div class="alert alert-danger">
+        <strong>Technology:</strong>
+        <%= @app.tech_stack_3 %> <strong>EOL:</strong> <%= @app.tech_stack_eol_3 %> <i>...less than 1 year</i>
+        </div>
+        <% elsif (365 < (@app.tech_stack_eol_3 - Date.today)) && ((@app.tech_stack_eol_3 - Date.today) < 730) %>
+        <div class="alert alert-warning">
+        <strong>Technology:</strong>
+        <%= @app.tech_stack_3 %> <strong>EOL:</strong> <%= @app.tech_stack_eol_3 %> <i>...less than 2 years</i>
+        </div>
+        <% else %>
+        <div class="alert alert-success">
         <strong>Technology:</strong>
         <%= @app.tech_stack_3 %> <strong>EOL:</strong> <%= @app.tech_stack_eol_3 %>
+        </div>
+        <% end %>
         <% end %>
       </p>
-      <p><% if @app.tech_stack_4.present? %>
+
+      <p> <% if @app.tech_stack_4.present? %>
+        <% if ((@app.tech_stack_eol_4 - Date.today)<365) %>
+        <div class="alert alert-danger">
+        <strong>Technology:</strong>
+        <%= @app.tech_stack_4 %> <strong>EOL:</strong> <%= @app.tech_stack_eol_4 %> <i>...less than 1 year</i>
+        </div>
+        <% elsif (365 < (@app.tech_stack_eol_4 - Date.today)) && ((@app.tech_stack_eol_4 - Date.today) < 730) %>
+        <div class="alert alert-warning">
+        <strong>Technology:</strong>
+        <%= @app.tech_stack_4 %> <strong>EOL:</strong> <%= @app.tech_stack_eol_4 %> <i>...less than 2 years</i>
+        </div>
+        <% else %>
+        <div class="alert alert-success">
         <strong>Technology:</strong>
         <%= @app.tech_stack_4 %> <strong>EOL:</strong> <%= @app.tech_stack_eol_4 %>
+        </div>
+        <% end %>
         <% end %>
       </p>
-      <p><% if @app.tech_stack_5.present? %>
+
+      <p> <% if @app.tech_stack_5.present? %>
+        <% if ((@app.tech_stack_eol_5 - Date.today)<365) %>
+        <div class="alert alert-danger">
+        <strong>Technology:</strong>
+        <%= @app.tech_stack_5 %> <strong>EOL:</strong> <%= @app.tech_stack_eol_5 %> <i>...less than 1 year</i>
+        </div>
+        <% elsif (365 < (@app.tech_stack_eol_5 - Date.today)) && ((@app.tech_stack_eol_5 - Date.today) < 730) %>
+        <div class="alert alert-warning">
+        <strong>Technology:</strong>
+        <%= @app.tech_stack_5 %> <strong>EOL:</strong> <%= @app.tech_stack_eol_5 %> <i>...less than 2 years</i>
+        </div>
+        <% else %>
+        <div class="alert alert-success">
         <strong>Technology:</strong>
         <%= @app.tech_stack_5 %> <strong>EOL:</strong> <%= @app.tech_stack_eol_5 %>
+        </div>
+        <% end %>
         <% end %>
       </p>
-      <p><% if @app.tech_stack_6.present? %>
+
+      <p> <% if @app.tech_stack_6.present? %>
+        <% if ((@app.tech_stack_eol_6 - Date.today)<365) %>
+        <div class="alert alert-danger">
+        <strong>Technology:</strong>
+        <%= @app.tech_stack_6 %> <strong>EOL:</strong> <%= @app.tech_stack_eol_6 %> <i>...less than 1 year</i>
+        </div>
+        <% elsif (365 < (@app.tech_stack_eol_6 - Date.today)) && ((@app.tech_stack_eol_6 - Date.today) < 730) %>
+        <div class="alert alert-warning">
+        <strong>Technology:</strong>
+        <%= @app.tech_stack_6 %> <strong>EOL:</strong> <%= @app.tech_stack_eol_6 %> <i>...less than 2 years</i>
+        </div>
+        <% else %>
+        <div class="alert alert-success">
         <strong>Technology:</strong>
         <%= @app.tech_stack_6 %> <strong>EOL:</strong> <%= @app.tech_stack_eol_6 %>
+        </div>
+        <% end %>
         <% end %>
       </p>
+    </div>
+  </div>
     </div><!-- col-lg-6 -->
     <div class="col-lg-6">
-
-      <h3>System Interfaces</h3>
+      <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="panel-title">System Interfaces</h3>
+        </div>
+        <div class="panel-body">
       <p>
         <%= @app.sys_dep_1 %>
       </p>
@@ -144,6 +284,8 @@
       <p>
         <%= @app.sys_dep_6 %>
       </p>
+    </div>
+  </div>
     </div><!-- col-lg-6 -->
     </div><!-- row -->
     </div><!-- panel body2 -->

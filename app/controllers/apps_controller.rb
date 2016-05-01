@@ -11,6 +11,7 @@ class AppsController < ApplicationController
   # GET /apps/1
   # GET /apps/1.json
   def show
+    
   end
 
   # GET /apps/new
@@ -29,9 +30,11 @@ class AppsController < ApplicationController
 
     respond_to do |format|
       if @app.save
-        format.html { redirect_to @app, notice: 'App was successfully created.' }
+        flash[:success] = 'App was successfully saved.'
+        format.html { redirect_to @app }
         format.json { render :show, status: :created, location: @app }
       else
+        flash[:danger] = 'There was a problem creating the App Catalog Page.'
         format.html { render :new }
         format.json { render json: @app.errors, status: :unprocessable_entity }
       end
@@ -43,9 +46,11 @@ class AppsController < ApplicationController
   def update
     respond_to do |format|
       if @app.update(app_params)
-        format.html { redirect_to @app, notice: 'App was successfully updated.' }
+        flash[:success] = 'App was successfully updated.'
+        format.html { redirect_to @app }
         format.json { render :show, status: :ok, location: @app }
       else
+        flash[:danger] = 'There was a problem updating the App Catalog Page.'
         format.html { render :edit }
         format.json { render json: @app.errors, status: :unprocessable_entity }
       end
@@ -57,7 +62,8 @@ class AppsController < ApplicationController
   def destroy
     @app.destroy
     respond_to do |format|
-      format.html { redirect_to apps_url, notice: 'App was successfully destroyed.' }
+      flash[:success] = 'App was successfully destroyed.'
+      format.html { redirect_to apps_url }
       format.json { head :no_content }
     end
   end

@@ -9,4 +9,5 @@ module ApplicationHelper
     @app.user_count_6.delete(',').to_i
   end
 
+
 end
