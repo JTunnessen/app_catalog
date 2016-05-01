@@ -5,7 +5,7 @@ class AppsController < ApplicationController
   # GET /apps
   # GET /apps.json
   def index
-    @apps = App.all
+    @apps = App.order("apps.app_priority ASC").all
   end
 
   # GET /apps/1

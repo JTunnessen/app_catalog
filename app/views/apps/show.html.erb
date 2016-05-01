@@ -1,133 +1,148 @@
 <p id="notice"><%= notice %></p>
 <%= link_to 'Edit', edit_app_path(@app) %> |
 <%= link_to 'Back', apps_path %>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+      <h1><%= @app.title %>  (<%= @app.acronym %>)</h1>
+  </div><!-- panel heading -->
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-lg-8">
+        <p>
+          <strong>Organizational Priority:</strong>
+          <%= @app.app_priority %>
+        </p>
+          <p>
+          <%= @app.description %>
+        </p>
+      </div><!-- column-lg -->
+      <div class="col-lg-4">
+        <!-- User base calculation -->
+        <h3>User Base (<%= userBase %>)</h3>
+        <p>
+          <strong><%= @app.user_1 %> <%= @app.user_count_1 %></strong>
+        </p>
+        <p>
+          <strong><%= @app.user_2 %> <%= @app.user_count_2 %></strong>
+        </p>
+        <p>
+          <strong><%= @app.user_3 %> <%= @app.user_count_3 %></strong>
+        </p>
+        <p>
+          <strong><%= @app.user_4 %> <%= @app.user_count_4 %></strong>
+        </p>
+        <p>
+          <strong><%= @app.user_5 %> <%= @app.user_count_5 %></strong>
+        </p>
+        <p>
+          <strong><%= @app.user_6 %> <%= @app.user_count_6 %></strong>
+        </p>
+        <p>
+          <strong><%= @app.user_7 %> <%= @app.user_count_7 %></strong>
+        </p>
+        <p>
+          <strong><%= @app.user_8 %> <%= @app.user_count_8 %></strong>
+        </p>
 
-<p id="app-title">
-  <h1><%= @app.title %></h1>
-  <h2>(<%= @app.acronym %>)</h2>
-</p>
-<p>
-  <strong>Organizational Priority:</strong>
-  <%= @app.app_priority %>
-</p>
-<p>
-  <%= @app.description %>
-</p>
+        <h3>General Info</h3>
+        <p>
+          <strong>Product Owner:</strong>
+          <%= @app.prod_owner %>
+        </p>
+        <p>
+          <strong>Product Manager:</strong>
+          <%= @app.prod_mgr %>
+        </p>
+        <p>
+          <strong>Lead Developer:</strong>
+          <%= @app.lead_dev %>
+        </p>
+        <p>
+          <strong>Deployment Date:</strong>
+          <%= @app.deploy_date %>
+        </p>
+        <p>
+          <strong>Mobile Friendly:</strong>
+          <%= @app.responsive %>
+        </p>
 
-<p>
-  <strong>Product Owner:</strong>
-  <%= @app.prod_owner %>
-</p>
+        <p>
+          <strong>Version:</strong>
+          <%= @app.version %>
+        </p>
+      </div><!-- column-lg-4 -->
+    </div><!-- row -->
+  </div><!-- panel body -->
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-lg-6">
 
-<p>
-  <strong>Product Manager:</strong>
-  <%= @app.prod_mgr %>
-</p>
+      <h3>Technology Stack</h3>
+      <p><% if @app.prog_lang_1.present? %>
+        <strong>Programming Language:</strong>
+        <%= @app.prog_lang_1 %>  <strong>EOL:</strong> <%= @app.prog_lang_eol_1 %>
+        <% end %>
+      </p>
 
-<p>
-  <strong>Lead Developer:</strong>
-  <%= @app.lead_dev %>
-</p>
-<p>
-  <strong>Deployment Date:</strong>
-  <%= @app.deploy_date %>
-</p>
-<p>
-  <strong>Mobile Friendly:</strong>
-  <%= @app.responsive %>
-</p>
+      <p><% if @app.framework_1.present? %>
+        <strong>Framework:</strong>
+        <%= @app.framework_1 %> <strong>EOL:</strong> <%= @app.framework_eol_1 %>
+        <% end %>
+      </p>
 
-<p>
-  <strong>Version:</strong>
-  <%= @app.version %>
-</p>
-<!-- User base calculation -->
-<h3>User Base (<%= userBase %>)</h3>
-<p>
-  <strong><%= @app.user_1 %> <%= @app.user_count_1 %></strong>
-</p>
-<p>
-  <strong><%= @app.user_2 %> <%= @app.user_count_2 %></strong>
-</p>
-<p>
-  <strong><%= @app.user_3 %> <%= @app.user_count_3 %></strong>
-</p>
-<p>
-  <strong><%= @app.user_4 %> <%= @app.user_count_4 %></strong>
-</p>
-<p>
-  <strong><%= @app.user_5 %> <%= @app.user_count_5 %></strong>
-</p>
-<p>
-  <strong><%= @app.user_6 %> <%= @app.user_count_6 %></strong>
-</p>
-<p>
-  <strong><%= @app.user_7 %> <%= @app.user_count_7 %></strong>
-</p>
-<p>
-  <strong><%= @app.user_8 %> <%= @app.user_count_8 %></strong>
-</p>
+      <p><% if @app.tech_stack_1.present? %>
+        <strong>Technology:</strong>
+        <%= @app.tech_stack_1 %> <strong>EOL:</strong> <%= @app.tech_stack_eol_1 %>
+        <% end %>
+      </p>
+      <p><% if @app.tech_stack_2.present? %>
+        <strong>Technology:</strong>
+        <%= @app.tech_stack_2 %> <strong>EOL:</strong> <%= @app.tech_stack_eol_2 %>
+        <% end %>
+      </p>
+      <p><% if @app.tech_stack_3.present? %>
+        <strong>Technology:</strong>
+        <%= @app.tech_stack_3 %> <strong>EOL:</strong> <%= @app.tech_stack_eol_3 %>
+        <% end %>
+      </p>
+      <p><% if @app.tech_stack_4.present? %>
+        <strong>Technology:</strong>
+        <%= @app.tech_stack_4 %> <strong>EOL:</strong> <%= @app.tech_stack_eol_4 %>
+        <% end %>
+      </p>
+      <p><% if @app.tech_stack_5.present? %>
+        <strong>Technology:</strong>
+        <%= @app.tech_stack_5 %> <strong>EOL:</strong> <%= @app.tech_stack_eol_5 %>
+        <% end %>
+      </p>
+      <p><% if @app.tech_stack_6.present? %>
+        <strong>Technology:</strong>
+        <%= @app.tech_stack_6 %> <strong>EOL:</strong> <%= @app.tech_stack_eol_6 %>
+        <% end %>
+      </p>
+    </div><!-- col-lg-6 -->
+    <div class="col-lg-6">
 
-<h3>Technology Stack</h3>
-<p><% if @app.prog_lang_1.present? %>
-  <strong>Programming Language:</strong>
-  <%= @app.prog_lang_1 %>  <strong>EOL:</strong> <%= @app.prog_lang_eol_1 %>
-  <% end %>
-</p>
-
-<p><% if @app.framework_1.present? %>
-  <strong>Framework:</strong>
-  <%= @app.framework_1 %> <strong>EOL:</strong> <%= @app.framework_eol_1 %>
-  <% end %>
-</p>
-
-<p><% if @app.tech_stack_1.present? %>
-  <strong>Technology:</strong>
-  <%= @app.tech_stack_1 %> <strong>EOL:</strong> <%= @app.tech_stack_eol_1 %>
-  <% end %>
-</p>
-<p><% if @app.tech_stack_2.present? %>
-  <strong>Technology:</strong>
-  <%= @app.tech_stack_2 %> <strong>EOL:</strong> <%= @app.tech_stack_eol_2 %>
-  <% end %>
-</p>
-<p><% if @app.tech_stack_3.present? %>
-  <strong>Technology:</strong>
-  <%= @app.tech_stack_3 %> <strong>EOL:</strong> <%= @app.tech_stack_eol_3 %>
-  <% end %>
-</p>
-<p><% if @app.tech_stack_4.present? %>
-  <strong>Technology:</strong>
-  <%= @app.tech_stack_4 %> <strong>EOL:</strong> <%= @app.tech_stack_eol_4 %>
-  <% end %>
-</p>
-<p><% if @app.tech_stack_5.present? %>
-  <strong>Technology:</strong>
-  <%= @app.tech_stack_5 %> <strong>EOL:</strong> <%= @app.tech_stack_eol_5 %>
-  <% end %>
-</p>
-<p><% if @app.tech_stack_6.present? %>
-  <strong>Technology:</strong>
-  <%= @app.tech_stack_6 %> <strong>EOL:</strong> <%= @app.tech_stack_eol_6 %>
-  <% end %>
-</p>
-
-<h3>System Interfaces</h3>
-<p>
-  <%= @app.sys_dep_1 %>
-</p>
-<p>
-  <%= @app.sys_dep_2 %>
-</p>
-<p>
-  <%= @app.sys_dep_3 %>
-</p>
-<p>
-  <%= @app.sys_dep_4 %>
-</p>
-<p>
-  <%= @app.sys_dep_5 %>
-</p>
-<p>
-  <%= @app.sys_dep_6 %>
-</p>
+      <h3>System Interfaces</h3>
+      <p>
+        <%= @app.sys_dep_1 %>
+      </p>
+      <p>
+        <%= @app.sys_dep_2 %>
+      </p>
+      <p>
+        <%= @app.sys_dep_3 %>
+      </p>
+      <p>
+        <%= @app.sys_dep_4 %>
+      </p>
+      <p>
+        <%= @app.sys_dep_5 %>
+      </p>
+      <p>
+        <%= @app.sys_dep_6 %>
+      </p>
+    </div><!-- col-lg-6 -->
+    </div><!-- row -->
+    </div><!-- panel body2 -->
+</div>
