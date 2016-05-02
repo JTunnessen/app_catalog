@@ -16,6 +16,11 @@ class AppsController < ApplicationController
 
   end
 
+  def search
+    index
+    render :index
+  end
+
   # GET /apps/new
   def new
     @app = App.new
