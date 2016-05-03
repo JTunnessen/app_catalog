@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
-
+  #resources :apps
   resources :apps do
     collection do
       match 'search' => 'apps#search', via: [:get, :post], as: :search
     end
   end
+
+  #get 'search' => "apps#search"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

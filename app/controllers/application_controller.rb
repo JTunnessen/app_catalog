@@ -3,8 +3,7 @@ class ApplicationController < ActionController::Base
   before_filter :set_global_search_variable
 
   def set_global_search_variable
-    @q = App.ransack(params[:q])
-    @apps = @q.result.order("apps.app_priority ASC")
+   @q = App.ransack(params[:q])
   end
 
   # Prevent CSRF attacks by raising an exception.

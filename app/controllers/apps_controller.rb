@@ -7,19 +7,17 @@ class AppsController < ApplicationController
   # GET /apps.json
   def index
     @q = App.ransack(params[:q])
-    @apps = @q.result.order("apps.app_priority ASC")
+    @apps = @q.result(distinct: true)
     #@apps = App.order("apps.app_priority ASC").all
   end
 
   # GET /apps/1
   # GET /apps/1.json
   def show
-    @q = App.ransack(params[:q])
-    @apps = @q.result.order("apps.app_priority ASC")
+
   end
 
   def search
-    index
     render :index
   end
 
