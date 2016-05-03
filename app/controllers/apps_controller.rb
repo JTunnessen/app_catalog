@@ -1,6 +1,7 @@
 class AppsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
   before_action :set_app, only: [:show, :edit, :update, :destroy]
+
   require 'date'
   # GET /apps
   # GET /apps.json
@@ -13,7 +14,8 @@ class AppsController < ApplicationController
   # GET /apps/1
   # GET /apps/1.json
   def show
-
+    @q = App.ransack(params[:q])
+    @apps = @q.result.order("apps.app_priority ASC")
   end
 
   def search

@@ -10,10 +10,10 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>Acronym</th>
-      <th>Deploy date</th>
+      <th><%= sort_link(@q, :acronym) %></th>
+      <th><%= sort_link(@q, :deploy_date, 'Deploy date') %></th>
       <th>Version</th>
-      <th>Prog lang</th>
+      <th><%= sort_link(@q, :prog_lang_1, 'Prog Lang') %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
