@@ -38,7 +38,7 @@
           <input type="text" class="form-control" placeholder="Search for..."
           <%= f.search_field :title_or_acronym_or_prog_lang_1_or_framework_1_or_tech_stack_1_or_tech_stack_2_or_tech_stack_3_or_tech_stack_4_or_tech_stack_5_or_tech_stack_6_cont %>
         </div>
-        <%= button_to('Search!', search_apps_path, :class => 'btn btn-large btn-primary')  %>
+        <%= button_to('Search!', search_apps_path(@app), :class => 'btn btn-large btn-primary')  %>
         <% end %>
       </form>
 
