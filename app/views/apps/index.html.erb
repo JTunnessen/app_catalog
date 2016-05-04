@@ -21,7 +21,14 @@
   <tbody>
     <% @apps.each do |app| %>
     <tr>
-        <td><%= link_to app.title, app %></td>
+      <% if ((app.prog_lang_eol_1- Date.today) < @year1) || ((app.framework_eol_1- Date.today) < @year1) || ((app.tech_stack_eol_1 - Date.today) < @year1) || ((app.tech_stack_eol_2 - Date.today) < @year1) || ((app.tech_stack_eol_3 - Date.today) < @year1) || ((app.tech_stack_eol_4 - Date.today) < @year1) %>
+        <% ((app.tech_stack_eol_5 - Date.today) < @year1) || ((app.tech_stack_eol_6 - Date.today) < @year1) %>
+        <td class="danger">
+          <%= link_to app.title, app %></td>
+          <% else %>
+          <td>
+          <%= link_to app.title, app %></td>
+              <% end %>
         <td><%= app.acronym %></td>
         <td><%= app.deploy_date %></td>
         <td><%= app.version %></td>

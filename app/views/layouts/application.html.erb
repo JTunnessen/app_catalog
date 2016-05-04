@@ -42,6 +42,12 @@
             <%= f.submit('Search!', :class => 'btn btn-large btn-primary')  %>
             <% end %>
           </form>
+          <% else %>
+          <form class="navbar-form navbar-right" role="search">
+            <div class="form-group">
+          <%= link_to 'Click to Search', root_path, :class => 'btn btn-large btn-primary' %>
+        </div>
+      </form>
           <% end %>
 
         </div><!-- /.navbar-collapse -->

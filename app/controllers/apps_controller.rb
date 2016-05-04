@@ -8,7 +8,8 @@ class AppsController < ApplicationController
   def index
     @q = App.ransack(params[:q])
     @apps = @q.result(distinct: true)
-    #@apps = App.order("apps.app_priority ASC").all
+    @year1 = 365
+    @year2 = 730
   end
 
   # GET /apps/1
