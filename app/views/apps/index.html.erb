@@ -25,16 +25,21 @@
         <% ((app.tech_stack_eol_5 - Date.today) < @year1) || ((app.tech_stack_eol_6 - Date.today) < @year1) %>
         <td class="danger">
           <%= link_to app.title, app %></td>
-          <% else %>
-          <td>
-          <%= link_to app.title, app %></td>
-              <% end %>
+          <% elsif ((@year1 < (app.prog_lang_eol_1- Date.today)) && ((app.prog_lang_eol_1- Date.today) < @year2)) || ((@year1 < (app.framework_eol_1- Date.today)) && ((app.framework_eol_1- Date.today) < @year2)) || ((@year1 < (app.tech_stack_eol_1- Date.today)) && ((app.tech_stack_eol_1- Date.today) < @year2)) || ((@year1 < (app.tech_stack_eol_2- Date.today)) && ((app.tech_stack_eol_2- Date.today) < @year2)) || ((@year1 < (app.tech_stack_eol_3- Date.today)) && ((app.tech_stack_eol_3- Date.today) < @year2)) || ((@year1 < (app.tech_stack_eol_4- Date.today)) && ((app.tech_stack_eol_4- Date.today) < @year2)) %>
+            <% ((@year1 < (app.tech_stack_eol_5- Date.today)) && ((app.tech_stack_eol_5- Date.today) < @year2)) || ((@year1 < (app.tech_stack_eol_1- Date.today)) && ((app.tech_stack_eol_6- Date.today) < @year2)) %>
+            <td class="warning">
+              <%= link_to app.title, app %></td>
+          <% elsif (@year2 < (app.prog_lang_eol_1- Date.today)) && (@year2 < (app.framework_eol_1- Date.today)) && (@year2 < (app.tech_stack_eol_1 - Date.today)) && (@year2 < (app.tech_stack_eol_2 - Date.today)) && (@year2 < (app.tech_stack_eol_3 - Date.today)) && (@year2 < (app.tech_stack_eol_4 - Date.today)) %>
+            <% (@year2 < (app.tech_stack_eol_5 - Date.today)) && (@year2 < (app.tech_stack_eol_6 - Date.today)) %>
+            <td class="active">
+              <%= link_to app.title, app %></td>
+          <% end %>
         <td><%= app.acronym %></td>
         <td><%= app.deploy_date %></td>
         <td><%= app.version %></td>
         <td><%= app.prog_lang_1 %></td>
         <% if @user.present? %>
-        <td><%= link_to 'Destroy', app, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Destroy', app, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>
     <% end %>

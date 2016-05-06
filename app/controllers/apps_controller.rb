@@ -3,6 +3,7 @@ class AppsController < ApplicationController
   before_action :set_app, only: [:show, :edit, :update, :destroy]
 
   require 'date'
+
   # GET /apps
   # GET /apps.json
   def index
@@ -15,7 +16,8 @@ class AppsController < ApplicationController
   # GET /apps/1
   # GET /apps/1.json
   def show
-
+    @year1 = 365
+    @year2 = 730
   end
 
   def search
