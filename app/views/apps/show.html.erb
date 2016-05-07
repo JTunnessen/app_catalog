@@ -1,3 +1,4 @@
+<% @page_title = @app.title %>
 <% if ((@app.prog_lang_eol_1- Date.today) < @year1) || ((@app.framework_eol_1- Date.today) < @year1) || ((@app.tech_stack_eol_1 - Date.today) < @year1) || ((@app.tech_stack_eol_2 - Date.today) < @year1) || ((@app.tech_stack_eol_3 - Date.today) < @year1) || ((@app.tech_stack_eol_4 - Date.today) < @year1) %>
   <% ((@app.tech_stack_eol_5 - Date.today) < @year1) || ((@app.tech_stack_eol_6 - Date.today) < @year1) %>
 <% flash[:danger] = 'This app is in TECHNICAL RISK! Review Technology Stack.'  %>
@@ -22,7 +23,7 @@
           </div>
           <div class="panel-body">
           <p>
-          <%= @app.description %>
+          <%= sanitize(@app.description) %>
         </p>
       </div>
     </div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>App Catalog</title>
+  <title>App Catalog <%= "| #{@page_title}" if @page_title %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -52,6 +52,7 @@
 
         </div><!-- /.navbar-collapse -->
     </nav>
+    <p class="pull-right"><strong>Welcome <%= current_user.email if user_signed_in? %></strong></p>
     <% flash.each do |name, msg| -%>
         <%= content_tag :div, msg, class: "alert alert-#{name}" %>
     <% end -%>

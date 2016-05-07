@@ -31,7 +31,7 @@
               <%= link_to app.title, app %></td>
           <% elsif (@year2 < (app.prog_lang_eol_1- Date.today)) && (@year2 < (app.framework_eol_1- Date.today)) && (@year2 < (app.tech_stack_eol_1 - Date.today)) && (@year2 < (app.tech_stack_eol_2 - Date.today)) && (@year2 < (app.tech_stack_eol_3 - Date.today)) && (@year2 < (app.tech_stack_eol_4 - Date.today)) %>
             <% (@year2 < (app.tech_stack_eol_5 - Date.today)) && (@year2 < (app.tech_stack_eol_6 - Date.today)) %>
-            <td class="active">
+            <td>
               <%= link_to app.title, app %></td>
           <% end %>
         <td><%= app.acronym %></td>
