@@ -19,7 +19,9 @@
   </thead>
 
   <tbody>
+    <% cache ['catalog', App.latest] do %>
     <% @apps.each do |app| %>
+    <% cache ['app', app] do %>
     <tr>
       <% if ((app.prog_lang_eol_1- Date.today) < $year1) || ((app.framework_eol_1- Date.today) < $year1) || ((app.tech_stack_eol_1 - Date.today) < $year1) || ((app.tech_stack_eol_2 - Date.today) < $year1) || ((app.tech_stack_eol_3 - Date.today) < $year1) || ((app.tech_stack_eol_4 - Date.today) < $year1) %>
         <% ((app.tech_stack_eol_5 - Date.today) < $year1) || ((app.tech_stack_eol_6 - Date.today) < $year1) %>
@@ -42,6 +44,8 @@
           <td><%= link_to 'Destroy', app, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>
+    <% end %>
+    <% end %>
     <% end %>
   </tbody>
 </table>
