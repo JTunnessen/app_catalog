@@ -15,4 +15,6 @@
 //= require turbolinks
 //= require bootstrap.min
 //= require npm
+//= require highcharts
+//= require chartkick
 //= require_tree .

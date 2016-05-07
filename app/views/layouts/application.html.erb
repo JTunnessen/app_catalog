@@ -9,6 +9,7 @@
 	<meta name="keywords" content="enterprise, information technology, software, systems, applications, apps, mobile, hardware, server, cloud, SaaS, PaaS, IaaS, lifecycle, maintenance, network">
 	<meta name="author" content="@JimT2 - Jim Tunnessen">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag "https://www.google.com/jsapi" %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -29,8 +30,8 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Dashboard <span class="sr-only">(current)</span></a></li>
-            <li><a href="#">LINK</a></li>
+            <li class="active"><%= link_to 'Dashboard', home_dashboard_path %><span class="sr-only">(current)</span></li>
+            <li><%= link_to 'About', home_about_path %></li>
             <li class="text-danger"><% if user_signed_in? %>
         			<%= link_to 'Logout', destroy_user_session_path, method: :delete %>
         			<% else %>
