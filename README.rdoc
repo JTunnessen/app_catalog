@@ -3,11 +3,18 @@
 This application is used to provide a central repository for all of the applications on your system. The system is set to provide a health check based on
 the end of life (EOL) of your applications' components. It also provides application biographical information, the user base, and system interfaces.
 
+== FEATURES
+
+* User Sign up/Sign in Authentication
+* Application Index with color coded warning and danger tags based on end of life technology components
+* Application Records sharing application name, version, description, user base, technical components, system interfaces
+
 == Technology
 
 * Ruby version 2.2.4
 * Rails version 4.2.5.2
 * UI Framework provided by 'gem bootstrap_jt'
+* Authentication provided by 'gem devise'
 
 WORK IN PROGRESS...
 * System dependencies
