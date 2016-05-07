@@ -12,16 +12,16 @@
   <% end %>
 
   <small><i>(leave blank if you don't want to change it)</i></small>
-  <input type="text" class="form-control" placeholder='Password'
+  <input type="password" class="form-control" placeholder='Password'
     <%= f.password_field :password, autocomplete: "off" %>
   <br>
 
-  <input type="text" class="form-control" placeholder='Password Confirmation'
+  <input type="password" class="form-control" placeholder='Password Confirmation'
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   <br>
 
   <small><i>(we need your current password to confirm your changes)</i></small>
-  <input type="text" class="form-control" placeholder='Current Password'
+  <input type="password" class="form-control" placeholder='Current Password'
     <%= f.password_field :current_password, autocomplete: "off" %>
   <br>
 
