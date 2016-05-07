@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>App Catalog <%= "| #{@page_title}" if @page_title %></title>
+  <meta name="description" content="This application is used to provide a central repository (catalog) for all of the applications on your enterprise. The system is set to provide a health check based on the end of life (EOL) of your applications' components. It also provides application biographical information, the user base, and system interfaces.">
+	<meta name="keywords" content="enterprise, information technology, software, systems, applications, apps, mobile, hardware, server, cloud, SaaS, PaaS, IaaS, lifecycle, maintenance, network">
+	<meta name="author" content="@JimT2 - Jim Tunnessen">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -53,6 +59,7 @@
         </div><!-- /.navbar-collapse -->
     </nav>
     <p class="pull-right"><strong>Welcome <%= current_user.email if user_signed_in? %></strong></p>
+    <br>
     <% flash.each do |name, msg| -%>
         <%= content_tag :div, msg, class: "alert alert-#{name}" %>
     <% end -%>
