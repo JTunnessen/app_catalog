@@ -6,6 +6,7 @@ the end of life (EOL) of your applications' components. It also provides applica
 == FEATURES
 
 * User Sign up/Sign in Authentication
+* Application Search functionality by all fields
 * Application Index with color coded warning and danger tags based on end of life technology components
 * Application Records sharing application name, version, description, user base, technical components, system interfaces
 
@@ -15,6 +16,7 @@ the end of life (EOL) of your applications' components. It also provides applica
 * Rails version 4.2.5.2
 * UI Framework provided by 'gem bootstrap_jt'
 * Authentication provided by 'gem devise'
+* Search functionality by 'gem ransack'
 
 WORK IN PROGRESS...
 * System dependencies
