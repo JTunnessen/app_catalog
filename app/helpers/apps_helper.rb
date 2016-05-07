@@ -1,8 +1,8 @@
 module AppsHelper
 
 # VARIABLES
- #year1 = 365
- #year2 = 730
+ $year1 = 365
+ $year2 = 730
 
  #prog_eol =(app.prog_lang_eol_1- Date.today)
  #framework_eol =(app.framework_eol_1- Date.today)

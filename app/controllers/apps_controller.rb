@@ -9,15 +9,12 @@ class AppsController < ApplicationController
   def index
     @q = App.ransack(params[:q])
     @apps = @q.result(distinct: true)
-    @year1 = 365
-    @year2 = 730
   end
 
   # GET /apps/1
   # GET /apps/1.json
   def show
-    @year1 = 365
-    @year2 = 730
+  
   end
 
   def search
