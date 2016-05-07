@@ -21,16 +21,16 @@
   <tbody>
     <% @apps.each do |app| %>
     <tr>
-      <% if ((app.prog_lang_eol_1- Date.today) < @year1) || ((app.framework_eol_1- Date.today) < @year1) || ((app.tech_stack_eol_1 - Date.today) < @year1) || ((app.tech_stack_eol_2 - Date.today) < @year1) || ((app.tech_stack_eol_3 - Date.today) < @year1) || ((app.tech_stack_eol_4 - Date.today) < @year1) %>
-        <% ((app.tech_stack_eol_5 - Date.today) < @year1) || ((app.tech_stack_eol_6 - Date.today) < @year1) %>
+      <% if ((app.prog_lang_eol_1- Date.today) < $year1) || ((app.framework_eol_1- Date.today) < $year1) || ((app.tech_stack_eol_1 - Date.today) < $year1) || ((app.tech_stack_eol_2 - Date.today) < $year1) || ((app.tech_stack_eol_3 - Date.today) < $year1) || ((app.tech_stack_eol_4 - Date.today) < $year1) %>
+        <% ((app.tech_stack_eol_5 - Date.today) < $year1) || ((app.tech_stack_eol_6 - Date.today) < $year1) %>
         <td class="danger">
           <%= link_to app.title, app %></td>
-          <% elsif ((@year1 < (app.prog_lang_eol_1- Date.today)) && ((app.prog_lang_eol_1- Date.today) < @year2)) || ((@year1 < (app.framework_eol_1- Date.today)) && ((app.framework_eol_1- Date.today) < @year2)) || ((@year1 < (app.tech_stack_eol_1- Date.today)) && ((app.tech_stack_eol_1- Date.today) < @year2)) || ((@year1 < (app.tech_stack_eol_2- Date.today)) && ((app.tech_stack_eol_2- Date.today) < @year2)) || ((@year1 < (app.tech_stack_eol_3- Date.today)) && ((app.tech_stack_eol_3- Date.today) < @year2)) || ((@year1 < (app.tech_stack_eol_4- Date.today)) && ((app.tech_stack_eol_4- Date.today) < @year2)) %>
-            <% ((@year1 < (app.tech_stack_eol_5- Date.today)) && ((app.tech_stack_eol_5- Date.today) < @year2)) || ((@year1 < (app.tech_stack_eol_1- Date.today)) && ((app.tech_stack_eol_6- Date.today) < @year2)) %>
+          <% elsif (($year1 < (app.prog_lang_eol_1- Date.today)) && ((app.prog_lang_eol_1- Date.today) < $year2)) || (($year1 < (app.framework_eol_1- Date.today)) && ((app.framework_eol_1- Date.today) < $year2)) || (($year1 < (app.tech_stack_eol_1- Date.today)) && ((app.tech_stack_eol_1- Date.today) < $year2)) || (($year1 < (app.tech_stack_eol_2- Date.today)) && ((app.tech_stack_eol_2- Date.today) < $year2)) || (($year1 < (app.tech_stack_eol_3- Date.today)) && ((app.tech_stack_eol_3- Date.today) < $year2)) || (($year1 < (app.tech_stack_eol_4- Date.today)) && ((app.tech_stack_eol_4- Date.today) < $year2)) %>
+            <% (($year1 < (app.tech_stack_eol_5- Date.today)) && ((app.tech_stack_eol_5- Date.today) < $year2)) || (($year1 < (app.tech_stack_eol_1- Date.today)) && ((app.tech_stack_eol_6- Date.today) < $year2)) %>
             <td class="warning">
               <%= link_to app.title, app %></td>
-          <% elsif (@year2 < (app.prog_lang_eol_1- Date.today)) && (@year2 < (app.framework_eol_1- Date.today)) && (@year2 < (app.tech_stack_eol_1 - Date.today)) && (@year2 < (app.tech_stack_eol_2 - Date.today)) && (@year2 < (app.tech_stack_eol_3 - Date.today)) && (@year2 < (app.tech_stack_eol_4 - Date.today)) %>
-            <% (@year2 < (app.tech_stack_eol_5 - Date.today)) && (@year2 < (app.tech_stack_eol_6 - Date.today)) %>
+          <% elsif ($year2 < (app.prog_lang_eol_1- Date.today)) && ($year2 < (app.framework_eol_1- Date.today)) && ($year2 < (app.tech_stack_eol_1 - Date.today)) && ($year2 < (app.tech_stack_eol_2 - Date.today)) && ($year2 < (app.tech_stack_eol_3 - Date.today)) && ($year2 < (app.tech_stack_eol_4 - Date.today)) %>
+            <% ($year2 < (app.tech_stack_eol_5 - Date.today)) && ($year2 < (app.tech_stack_eol_6 - Date.today)) %>
             <td>
               <%= link_to app.title, app %></td>
           <% end %>
