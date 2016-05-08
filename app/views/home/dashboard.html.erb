@@ -3,9 +3,38 @@
     <h2>Enterprise IT Dashboard</h2>
   </div>
   <div class="row"><!-- row 1 -->
-    <div class="col-lg-4">
+    <div id='chart1' class="col-lg-4">
       <%= pie_chart App.group(:prog_lang_1).count %>
       <h4 class="chart-title">Programming Languages</h4>
+    </div>
+    <div id="chart2" class='col-lg-4'>
+      <script>
+        $(function () {
+          $('#chart2').highcharts({
+              chart: {
+                  type: 'bar'
+              },
+              title: {
+                  text: 'Fruit Consumption'
+              },
+              xAxis: {
+                  categories: ['Apples', 'Bananas', 'Oranges']
+              },
+              yAxis: {
+                  title: {
+                      text: 'Fruit eaten'
+                  }
+              },
+              series: [{
+                  name: 'Jane',
+                  data: [1, 0, 4]
+              }, {
+                  name: 'John',
+                  data: [5, 7, 3]
+              }]
+          });
+      });
+    </script>
     </div>
   </div><!-- row 1 -->
 </div><!-- row header -->
