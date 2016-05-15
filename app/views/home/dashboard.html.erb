@@ -2,39 +2,23 @@
   <div class="col-lg-12">
     <h2>Enterprise IT Dashboard</h2>
   </div>
-  <div class="row"><!-- row 1 -->
+</div>
+  <div class="row"><!-- Row Spacer -->
+  <br>
+  </div> <!-- spacer -->
+  <div id="row1" class="row"><!-- row 1 -->
+    <div id='chart0' class="col-lg-4">
+      <%= column_chart App.group(:deploy_date).count %>
+      <h4 class="chart-title">App Deployments</h4>
+    </div>
     <div id='chart1' class="col-lg-4">
       <%= pie_chart App.group(:prog_lang_1).count %>
       <h4 class="chart-title">Programming Languages</h4>
     </div>
-    <div id="chart2" class='col-lg-4'>
-      <script>
-        $(function () {
-          $('#chart2').highcharts({
-              chart: {
-                  type: 'bar'
-              },
-              title: {
-                  text: 'Fruit Consumption'
-              },
-              xAxis: {
-                  categories: ['Apples', 'Bananas', 'Oranges']
-              },
-              yAxis: {
-                  title: {
-                      text: 'Fruit eaten'
-                  }
-              },
-              series: [{
-                  name: 'Jane',
-                  data: [1, 0, 4]
-              }, {
-                  name: 'John',
-                  data: [5, 7, 3]
-              }]
-          });
-      });
-    </script>
+    <div id='chart0' class="col-lg-4">
+      <p class="app-count"><%= App.count(:title).to_int %></p>
+      <h4 class="chart-title">Number of Apps</h4>
+      <p class="user-count"><%= $total_user_count %>
+      <h4 class="chart-title">Total Users (all apps)</h4>
     </div>
-  </div><!-- row 1 -->
-</div><!-- row header -->
+  </div> <!-- row1 -->
