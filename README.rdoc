@@ -20,22 +20,7 @@ the end of life (EOL) of your applications' components. It also provides applica
 * Search functionality by 'gem ransack'
 * Charts and Graphs provided with 'gem chartkick'
 
-WORK IN PROGRESS...
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 
 The MIT License (MIT)
 Copyright (c) 2016 Jim Tunnessen
