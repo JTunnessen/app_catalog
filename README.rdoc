@@ -9,6 +9,7 @@ the end of life (EOL) of your applications' components. It also provides applica
 * Application Search functionality by all fields
 * Application Index with color coded warning and danger tags based on end of life technology components
 * Application Records sharing application name, version, description, user base, technical components, system interfaces
+* Enterprise Management Dashboard with graphical representation of Deployment History, Programming Languages, Overall User base, and Number of Apps in your environment
 
 == Technology
 
@@ -17,6 +18,7 @@ the end of life (EOL) of your applications' components. It also provides applica
 * UI Framework provided by 'gem bootstrap_jt'
 * Authentication provided by 'gem devise'
 * Search functionality by 'gem ransack'
+* Charts and Graphs provided with 'gem chartkick'
 
 WORK IN PROGRESS...
 * System dependencies
