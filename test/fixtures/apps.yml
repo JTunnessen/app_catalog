@@ -36,12 +36,12 @@ one:
   tech_stack_eol_2: 2016-04-30
   tech_stack_3: MyString
   tech_stack_eol_3: 2016-04-30
-  tech_stack_4: MyString
-  tech_stack_eol_4: 2016-04-30
-  tech_stack_5: MyString
-  tech_stack_eol_5: 2016-04-30
-  tech_stack_6: MyString
-  tech_stack_eol_6: 2016-04-30
+  app_server: MyString
+  app_server_eol: 2016-04-30
+  web_server: MyString
+  web_server_eol: 2016-04-30
+  database: MyString
+  database_eol: 2016-04-30
   sys_dep_1: MyString
   sys_dep_2: MyString
   sys_dep_3: MyString
@@ -86,12 +86,12 @@ two:
   tech_stack_eol_2: 2016-04-30
   tech_stack_3: MyString
   tech_stack_eol_3: 2016-04-30
-  tech_stack_4: MyString
-  tech_stack_eol_4: 2016-04-30
-  tech_stack_5: MyString
-  tech_stack_eol_5: 2016-04-30
-  tech_stack_6: MyString
-  tech_stack_eol_6: 2016-04-30
+  app_server: MyString
+  app_server_eol: 2016-04-30
+  web_server: MyString
+  web_server_eol: 2016-04-30
+  database: MyString
+  database_eol: 2016-04-30
   sys_dep_1: MyString
   sys_dep_2: MyString
   sys_dep_3: MyString

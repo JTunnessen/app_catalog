@@ -1,6 +1,6 @@
 <% @page_title = @app.title %>
-<% if ((@app.prog_lang_eol_1- Date.today) < $year1) || ((@app.framework_eol_1- Date.today) < $year1) || ((@app.tech_stack_eol_1 - Date.today) < $year1) || ((@app.tech_stack_eol_2 - Date.today) < $year1) || ((@app.tech_stack_eol_3 - Date.today) < $year1) || ((@app.tech_stack_eol_4 - Date.today) < $year1) %>
-  <% ((@app.tech_stack_eol_5 - Date.today) < $year1) || ((@app.tech_stack_eol_6 - Date.today) < $year1) %>
+<% if ((@app.prog_lang_eol_1- Date.today) < $year1) || ((@app.framework_eol_1- Date.today) < $year1) || ((@app.tech_stack_eol_1 - Date.today) < $year1) || ((@app.tech_stack_eol_2 - Date.today) < $year1) || ((@app.tech_stack_eol_3 - Date.today) < $year1) || ((@app.web_server_eol - Date.today) < $year1) %>
+  <% ((@app.app_server_eol - Date.today) < $year1) || ((@app.database_eol - Date.today) < $year1) %>
 <% flash[:danger] = 'This app is in TECHNICAL RISK! Review Technology Stack.'  %>
 <% end %>
 
@@ -162,7 +162,7 @@
         <strong>Database:</strong>
         <%= @app.database %> <%= @app.database_version %><strong>EOL:</strong> <%= @app.database_eol %> <i>...less than 1 year</i>
         </div>
-        <% elsif ($year1 < (@app.tech_stack_eol_4 - Date.today)) && ((@app.database_eol - Date.today) < $year2) %>
+        <% elsif ($year1 < (@app.app_server_eol - Date.today)) && ((@app.database_eol - Date.today) < $year2) %>
         <div class="alert alert-warning">
         <strong>Database:</strong>
         <%= @app.database %> <%= @app.database_version %><strong>EOL:</strong> <%= @app.database_eol %> <i>...less than 2 years</i>

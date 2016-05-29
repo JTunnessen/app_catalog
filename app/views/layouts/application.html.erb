@@ -59,7 +59,9 @@
 
         </div><!-- /.navbar-collapse -->
     </nav>
-    <p class="pull-right"><strong>Welcome <%= current_user.email if user_signed_in? %></strong></p>
+    <% if user_signed_in? %>
+    <p class="pull-right"><strong>Welcome <%= current_user.email %></strong></p>
+    <% end %>
     <br>
     <% flash.each do |name, msg| -%>
         <%= content_tag :div, msg, class: "alert alert-#{name}" %>

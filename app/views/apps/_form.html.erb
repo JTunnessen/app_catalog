@@ -32,13 +32,13 @@
   <input type="text" class="form-control" placeholder='Version Number'
     <%= f.text_field :version %>
   <br>
-  <input type="text" class="form-control" placeholder='Version Number'
+  <input type="text" class="form-control" placeholder='Link to the App'
     <%= f.text_field :link_to_app %>
   <br>
-  <input type="text" class="form-control" placeholder='Version Number'
+  <input type="text" class="form-control" placeholder='Link to Product Backlog'
     <%= f.text_field :link_to_backlog %>
   <br>
-  <input type="text" class="form-control" placeholder='Version Number'
+  <input type="text" class="form-control" placeholder='Link to Code Repo'
     <%= f.text_field :link_to_repo %>
   <br>
   <div>
@@ -126,7 +126,7 @@
     <%= f.text_field :database_version %>
   <br>
   <div>
-    <span><strong>EOL Date</strong></span> <%= f.date_select :database_eol_1 %>
+    <span><strong>EOL Date</strong></span> <%= f.date_select :database_eol %>
   </div>
   <br>
   <input type="text" class="form-control" placeholder='Web Server'
