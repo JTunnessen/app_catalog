@@ -32,6 +32,15 @@
   <input type="text" class="form-control" placeholder='Version Number'
     <%= f.text_field :version %>
   <br>
+  <input type="text" class="form-control" placeholder='Version Number'
+    <%= f.text_field :link_to_app %>
+  <br>
+  <input type="text" class="form-control" placeholder='Version Number'
+    <%= f.text_field :link_to_backlog %>
+  <br>
+  <input type="text" class="form-control" placeholder='Version Number'
+    <%= f.text_field :link_to_repo %>
+  <br>
   <div>
     <span><strong>Deployment Date</strong></span>  <%= f.date_select :deploy_date %>
   </div>
@@ -93,6 +102,9 @@
   <input type="text" class="form-control" placeholder='Programming Language and Version eg: Python 3.5.1'
     <%= f.text_field :prog_lang_1 %>
   <br>
+  <input type="text" class="form-control" placeholder='Version of Programming Language eg: 3.5.1'
+    <%= f.text_field :prog_lang_version %>
+  <br>
   <div>
     <span><strong>EOL Date</strong></span> <%= f.date_select :prog_lang_eol_1 %>
   </div>
@@ -100,8 +112,41 @@
   <input type="text" class="form-control" placeholder='Framework'
     <%= f.text_field :framework_1 %>
   <br>
+  <input type="text" class="form-control" placeholder='Framework Version eg: 4.2.1'
+    <%= f.text_field :framework_version %>
+  <br>
   <div>
     <span><strong>EOL Date</strong></span> <%= f.date_select :framework_eol_1 %>
+  </div>
+  <br>
+  <input type="text" class="form-control" placeholder='Database'
+    <%= f.text_field :database %>
+  <br>
+  <input type="text" class="form-control" placeholder='Database Version eg: 9.5.1'
+    <%= f.text_field :database_version %>
+  <br>
+  <div>
+    <span><strong>EOL Date</strong></span> <%= f.date_select :database_eol_1 %>
+  </div>
+  <br>
+  <input type="text" class="form-control" placeholder='Web Server'
+    <%= f.text_field :web_server %>
+  <br>
+  <input type="text" class="form-control" placeholder='Version #'
+    <%= f.text_field :web_server_version %>
+  <br>
+  <div>
+    <span><strong>EOL Date</strong></span> <%= f.date_select :web_server_eol %>
+  </div>
+  <br>
+  <input type="text" class="form-control" placeholder='App Server'
+    <%= f.text_field :app_server %>
+  <br>
+  <input type="text" class="form-control" placeholder='Version #'
+    <%= f.text_field :app_server_version %>
+  <br>
+  <div>
+    <span><strong>EOL Date</strong></span> <%= f.date_select :app_server_eol %>
   </div>
   <br>
   <input type="text" class="form-control" placeholder='Technology'
@@ -113,37 +158,16 @@
   <br>
   <input type="text" class="form-control" placeholder='Technology'
     <%= f.text_field :tech_stack_2 %>
-  <br>
-  <div>
-    <span><strong>EOL Date</strong></span> <%= f.date_select :tech_stack_eol_2 %>
-  </div>
+    <br>
+    <div>
+      <span><strong>EOL Date</strong></span> <%= f.date_select :tech_stack_eol_2 %>
+    </div>
   <br>
   <input type="text" class="form-control" placeholder='Technology'
     <%= f.text_field :tech_stack_3 %>
   <br>
   <div>
     <span><strong>EOL Date</strong></span> <%= f.date_select :tech_stack_eol_3 %>
-  </div>
-  <br>
-  <input type="text" class="form-control" placeholder='Technology'
-    <%= f.text_field :tech_stack_4 %>
-  <br>
-  <div>
-    <span><strong>EOL Date</strong></span> <%= f.date_select :tech_stack_eol_4 %>
-  </div>
-  <br>
-  <input type="text" class="form-control" placeholder='Technology'
-    <%= f.text_field :tech_stack_5 %>
-    <br>
-    <div>
-      <span><strong>EOL Date</strong></span> <%= f.date_select :tech_stack_eol_5 %>
-    </div>
-  <br>
-  <input type="text" class="form-control" placeholder='Technology'
-    <%= f.text_field :tech_stack_6 %>
-  <br>
-  <div>
-    <span><strong>EOL Date</strong></span> <%= f.date_select :tech_stack_eol_6 %>
   </div>
   <br>
   <h3>Application Interfaces</h3>

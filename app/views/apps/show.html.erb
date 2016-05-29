@@ -91,6 +91,18 @@
           <strong>Version:</strong>
           <%= @app.version %>
         </p>
+        <p>
+          <strong>Version:</strong>
+          <%= @app.link_to_app %>
+        </p>
+        <p>
+          <strong>Version:</strong>
+          <%= @app.link_to_backlog %>
+        </p>
+        <p>
+          <strong>Version:</strong>
+          <%= @app.link_to_repo %>
+        </p>
       </div>
       </div><!-- panel -->
       </div><!-- column-lg-4 -->
@@ -107,18 +119,18 @@
       <p> <% if @app.prog_lang_1.present? %>
         <% if ((@app.prog_lang_eol_1 - Date.today)<$year1) %>
         <div class="alert alert-danger">
-        <strong>Technology:</strong>
-        <%= @app.prog_lang_1 %> <strong>EOL:</strong> <%= @app.prog_lang_eol_1 %> <i>...less than 1 year</i>
+        <strong>Programming Language:</strong>
+        <%= @app.prog_lang_1 %> <%= @app.prog_lang_version %> <strong>EOL:</strong> <%= @app.prog_lang_eol_1 %> <i>...less than 1 year</i>
         </div>
         <% elsif ($year1 < (@app.prog_lang_eol_1 - Date.today)) && ((@app.prog_lang_eol_1 - Date.today) < $year2) %>
         <div class="alert alert-warning">
-        <strong>Technology:</strong>
-        <%= @app.prog_lang_1 %> <strong>EOL:</strong> <%= @app.prog_lang_eol_1 %> <i>...less than 2 years</i>
+        <strong>Programming Language:</strong>
+        <%= @app.prog_lang_1 %> <%= @app.prog_lang_1 %><strong>EOL:</strong> <%= @app.prog_lang_eol_1 %> <i>...less than 2 years</i>
         </div>
         <% else %>
         <div class="alert alert-success">
-        <strong>Technology:</strong>
-        <%= @app.prog_lang_1 %> <strong>EOL:</strong> <%= @app.prog_lang_eol_1 %>
+        <strong>Programming Language:</strong>
+        <%= @app.prog_lang_1 %> <%= @app.prog_lang_1 %><strong>EOL:</strong> <%= @app.prog_lang_eol_1 %>
         </div>
         <% end %>
         <% end %>
@@ -127,18 +139,78 @@
       <p> <% if @app.framework_1.present? %>
         <% if ((@app.framework_eol_1 - Date.today)<$year1) %>
         <div class="alert alert-danger">
-        <strong>Technology:</strong>
-        <%= @app.framework_1 %> <strong>EOL:</strong> <%= @app.framework_eol_1 %> <i>...less than 1 year</i>
+        <strong>Framework:</strong>
+        <%= @app.framework_1 %> <%= @app.framework_version %><strong>EOL:</strong> <%= @app.framework_eol_1 %> <i>...less than 1 year</i>
         </div>
         <% elsif ($year1 < (@app.prog_lang_eol_1 - Date.today)) && ((@app.framework_eol_1 - Date.today) < $year2) %>
         <div class="alert alert-warning">
-        <strong>Technology:</strong>
-        <%= @app.framework_1 %> <strong>EOL:</strong> <%= @app.framework_eol_1 %> <i>...less than 2 years</i>
+        <strong>Framework:</strong>
+        <%= @app.framework_1 %> <%= @app.framework_version %><strong>EOL:</strong> <%= @app.framework_eol_1 %> <i>...less than 2 years</i>
         </div>
         <% else %>
         <div class="alert alert-success">
-        <strong>Technology:</strong>
-        <%= @app.framework_1 %> <strong>EOL:</strong> <%= @app.framework_eol_1 %>
+        <strong>Framework:</strong>
+        <%= @app.framework_1 %> <%= @app.framework_version %><strong>EOL:</strong> <%= @app.framework_eol_1 %>
+        </div>
+        <% end %>
+        <% end %>
+      </p>
+
+      <p> <% if @app.database.present? %>
+        <% if ((@app.database_eol - Date.today)<$year1) %>
+        <div class="alert alert-danger">
+        <strong>Database:</strong>
+        <%= @app.database %> <%= @app.database_version %><strong>EOL:</strong> <%= @app.database_eol %> <i>...less than 1 year</i>
+        </div>
+        <% elsif ($year1 < (@app.tech_stack_eol_4 - Date.today)) && ((@app.database_eol - Date.today) < $year2) %>
+        <div class="alert alert-warning">
+        <strong>Database:</strong>
+        <%= @app.database %> <%= @app.database_version %><strong>EOL:</strong> <%= @app.database_eol %> <i>...less than 2 years</i>
+        </div>
+        <% else %>
+        <div class="alert alert-success">
+        <strong>Database:</strong>
+        <%= @app.database %> <%= @app.database_version %><strong>EOL:</strong> <%= @app.database_eol %>
+        </div>
+        <% end %>
+        <% end %>
+      </p>
+
+      <p> <% if @app.web_server.present? %>
+        <% if ((@app.web_server_eol - Date.today)<$year1) %>
+        <div class="alert alert-danger">
+        <strong>Web Server:</strong>
+        <%= @app.web_server %> <%= @app.web_server_version %><strong>EOL:</strong> <%= @app.web_server_eol %> <i>...less than 1 year</i>
+        </div>
+        <% elsif ($year1 < (@app.web_server_eol - Date.today)) && ((@app.web_server_eol - Date.today) < $year2) %>
+        <div class="alert alert-warning">
+        <strong>Web Server:</strong>
+        <%= @app.web_server %> <%= @app.web_server_version %><strong>EOL:</strong> <%= @app.web_server_eol %> <i>...less than 2 years</i>
+        </div>
+        <% else %>
+        <div class="alert alert-success">
+        <strong>Web Server:</strong>
+        <%= @app.web_server %> <%= @app.web_server_version %><strong>EOL:</strong> <%= @app.web_server_eol %>
+        </div>
+        <% end %>
+        <% end %>
+      </p>
+
+      <p> <% if @app.app_server.present? %>
+        <% if ((@app.app_server_eol - Date.today)<$year1) %>
+        <div class="alert alert-danger">
+        <strong>App Server:</strong>
+        <%= @app.app_server %> <%= @app.app_server_version %><strong>EOL:</strong> <%= @app.app_server_eol %> <i>...less than 1 year</i>
+        </div>
+        <% elsif ($year1 < (@app.app_server_eol_6 - Date.today)) && ((@app.app_server_eol - Date.today) < $year2) %>
+        <div class="alert alert-warning">
+        <strong>App Server:</strong>
+        <%= @app.app_server %> <%= @app.app_server_version %><strong>EOL:</strong> <%= @app.app_server_eol %> <i>...less than 2 years</i>
+        </div>
+        <% else %>
+        <div class="alert alert-success">
+        <strong>App Server:</strong>
+        <%= @app.app_server %> <%= @app.app_server_version %><strong>EOL:</strong> <%= @app.app_server_eol %>
         </div>
         <% end %>
         <% end %>
@@ -204,65 +276,6 @@
         <% end %>
       </p>
 
-      <p> <% if @app.tech_stack_4.present? %>
-        <% if ((@app.tech_stack_eol_4 - Date.today)<$year1) %>
-        <div class="alert alert-danger">
-        <strong>Technology:</strong>
-        <%= @app.tech_stack_4 %> <strong>EOL:</strong> <%= @app.tech_stack_eol_4 %> <i>...less than 1 year</i>
-        </div>
-        <% elsif ($year1 < (@app.tech_stack_eol_4 - Date.today)) && ((@app.tech_stack_eol_4 - Date.today) < $year2) %>
-        <div class="alert alert-warning">
-        <strong>Technology:</strong>
-        <%= @app.tech_stack_4 %> <strong>EOL:</strong> <%= @app.tech_stack_eol_4 %> <i>...less than 2 years</i>
-        </div>
-        <% else %>
-        <div class="alert alert-success">
-        <strong>Technology:</strong>
-        <%= @app.tech_stack_4 %> <strong>EOL:</strong> <%= @app.tech_stack_eol_4 %>
-        </div>
-        <% end %>
-        <% end %>
-      </p>
-
-      <p> <% if @app.tech_stack_5.present? %>
-        <% if ((@app.tech_stack_eol_5 - Date.today)<$year1) %>
-        <div class="alert alert-danger">
-        <strong>Technology:</strong>
-        <%= @app.tech_stack_5 %> <strong>EOL:</strong> <%= @app.tech_stack_eol_5 %> <i>...less than 1 year</i>
-        </div>
-        <% elsif ($year1 < (@app.tech_stack_eol_5 - Date.today)) && ((@app.tech_stack_eol_5 - Date.today) < $year2) %>
-        <div class="alert alert-warning">
-        <strong>Technology:</strong>
-        <%= @app.tech_stack_5 %> <strong>EOL:</strong> <%= @app.tech_stack_eol_5 %> <i>...less than 2 years</i>
-        </div>
-        <% else %>
-        <div class="alert alert-success">
-        <strong>Technology:</strong>
-        <%= @app.tech_stack_5 %> <strong>EOL:</strong> <%= @app.tech_stack_eol_5 %>
-        </div>
-        <% end %>
-        <% end %>
-      </p>
-
-      <p> <% if @app.tech_stack_6.present? %>
-        <% if ((@app.tech_stack_eol_6 - Date.today)<$year1) %>
-        <div class="alert alert-danger">
-        <strong>Technology:</strong>
-        <%= @app.tech_stack_6 %> <strong>EOL:</strong> <%= @app.tech_stack_eol_6 %> <i>...less than 1 year</i>
-        </div>
-        <% elsif ($year1 < (@app.tech_stack_eol_6 - Date.today)) && ((@app.tech_stack_eol_6 - Date.today) < $year2) %>
-        <div class="alert alert-warning">
-        <strong>Technology:</strong>
-        <%= @app.tech_stack_6 %> <strong>EOL:</strong> <%= @app.tech_stack_eol_6 %> <i>...less than 2 years</i>
-        </div>
-        <% else %>
-        <div class="alert alert-success">
-        <strong>Technology:</strong>
-        <%= @app.tech_stack_6 %> <strong>EOL:</strong> <%= @app.tech_stack_eol_6 %>
-        </div>
-        <% end %>
-        <% end %>
-      </p>
     </div>
   </div>
     </div><!-- col-lg-6 -->

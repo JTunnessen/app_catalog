@@ -8,6 +8,9 @@ class CreateApps < ActiveRecord::Migration
       t.string :prod_owner
       t.string :lead_dev
       t.date :deploy_date
+      t.string :link_to_app
+      t.string :link_to_repo
+      t.string :link_to_backlog
       t.string :user_1
       t.string :user_count_1
       t.string :user_2
@@ -27,21 +30,26 @@ class CreateApps < ActiveRecord::Migration
       t.boolean :responsive
       t.string :version
       t.string :prog_lang_1
+      t.string :prog_lang_version
       t.date :prog_lang_eol_1
       t.string :framework_1
+      t.string :framework_version
       t.date :framework_eol_1
+      t.string :database
+      t.string :database_version
+      t.date :database_eol
+      t.string :web_server
+      t.string :web_server_version
+      t.date :web_server_eol
+      t.string :app_server
+      t.string :app_server_version
+      t.date :app_server_eol
       t.string :tech_stack_1
       t.date :tech_stack_eol_1
       t.string :tech_stack_2
       t.date :tech_stack_eol_2
       t.string :tech_stack_3
       t.date :tech_stack_eol_3
-      t.string :tech_stack_4
-      t.date :tech_stack_eol_4
-      t.string :tech_stack_5
-      t.date :tech_stack_eol_5
-      t.string :tech_stack_6
-      t.date :tech_stack_eol_6
       t.string :sys_dep_1
       t.string :sys_dep_2
       t.string :sys_dep_3

@@ -44,7 +44,7 @@
             <div class="form-group">
               <%= search_form_for @q, url: apps_path, html: { method: :post } do |f| %>
               <input type="text" class="form-control" placeholder="Search for..."
-              <%= f.search_field :title_or_acronym_or_prog_lang_1_or_framework_1_or_tech_stack_1_or_tech_stack_2_or_tech_stack_3_or_tech_stack_4_or_tech_stack_5_or_tech_stack_6_cont %>
+              <%= f.search_field :title_or_acronym_or_prog_lang_1_or_framework_1_or_tech_stack_1_or_tech_stack_2_or_tech_stack_3_or_web_server_or_app_server_or_database_cont %>
             </div>
             <%= f.submit('Search!', :class => 'btn btn-large btn-primary')  %>
             <% end %>
